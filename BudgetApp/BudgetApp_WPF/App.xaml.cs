@@ -28,6 +28,8 @@ namespace BudgetApp_WPF
         private IServiceProvider CreateServiceProvider()
         {
             IServiceCollection services = new ServiceCollection();
+            
+
             services.AddSingleton<IConfiguration>(Configuration);
 
 
