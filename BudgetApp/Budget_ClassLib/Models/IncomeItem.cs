@@ -15,8 +15,6 @@ namespace Budget_ClassLib.Models
         public DateTime TimeStamp { get; set; }
         public bool IsReOccurring { get; set; }
         public BudgetFrequency BudgetFrequency { get; set; } = BudgetFrequency.OneTime;
-
-
         public string Note { get; set; } = string.Empty;
 
     }
