@@ -1,9 +1,22 @@
 # Budget
 
-## Monthly
-Looks at Monthly Income and expenses.
-### Monthly Income
 
+
+## Monthly Summary
+Looks at Monthly Income and expenses.
+
+**Monthly Income**
+List of income by user
+
+Total Income
+Total expenses
+Projected leftover
+
+**Monthly Expenses**
+By Main Category
+- By Subcategory
+
+TOTAL EXPENSES
 
 
 
