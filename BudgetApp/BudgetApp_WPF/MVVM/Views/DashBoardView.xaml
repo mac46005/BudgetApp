@@ -13,10 +13,16 @@
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        <!--VERY TOP LABELS-->
         <TextBlock Grid.Row="0"
                    Text="Monthly Budget"/>
         <TextBlock Grid.Row="0"
                    Text="DATE"/>
+        
+        
+        
+        <!--SUMMARY LABELS-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -35,15 +41,15 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
-            
-            
+
+
+
             <!--INCOME-->
             <ListView Grid.Column="0"/>
-            
-            
-            
-            
+
+
+
+
             <!--OVERALL SUMMARY-->
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -63,11 +69,24 @@
 
 
         </Grid>
-
-
-
+        
+        
+        
+        
+        
+        <!--EXPENSES SUMMARY-->
+        
+        
 
 
 
     </Grid>
+    
+    
+    
+    
+    
+    
+    
+    
 </UserControl>

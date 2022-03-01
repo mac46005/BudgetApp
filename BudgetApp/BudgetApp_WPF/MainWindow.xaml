@@ -10,6 +10,20 @@
         Height="900"
         Width="960">
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <RadioButton Content="Home"/>
+                <RadioButton/>
+                <RadioButton/>
+                <RadioButton/>
+                <RadioButton/>
+            </StackPanel>
+            
+            
+        </Grid>
     </Grid>
 </Window>
