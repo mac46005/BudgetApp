@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.Models
 {
+    /// <summary>
+    /// Pay Freguency
+    /// </summary>
     public enum BudgetFrequency
     {
         OneTime,

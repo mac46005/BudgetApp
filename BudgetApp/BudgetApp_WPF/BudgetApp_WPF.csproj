@@ -29,8 +29,6 @@
     <Folder Include="Core\Commands\" />
     <Folder Include="Core\Enums\" />
     <Folder Include="MVVM\Models\" />
-    <Folder Include="MVVM\Views\History\" />
-    <Folder Include="MVVM\Views\User\" />
   </ItemGroup>
 
 </Project>

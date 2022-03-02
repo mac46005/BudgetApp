@@ -7,6 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Category Data Manager"
+                   Grid.Column="1"
+                   Grid.Row="0"/>
+        <Button Content="Expense Category"
+                Grid.Column="1"
+                Grid.Row="1"/>
+        <Button Content="Expense Sub Category"
+                Grid.Column="1"
+                Grid.Row="2"/>
+        <Button Content="Income Category"
+                Grid.Column="1"
+                Grid.Row="3"/>
     </Grid>
 </UserControl>
