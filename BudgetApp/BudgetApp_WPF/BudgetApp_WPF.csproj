@@ -29,6 +29,11 @@
     <Folder Include="Core\Commands\" />
     <Folder Include="Core\Enums\" />
     <Folder Include="MVVM\Models\" />
+    <Folder Include="MVVM\ViewModels\Income\" />
+    <Folder Include="MVVM\ViewModels\Expense\" />
+    <Folder Include="MVVM\ViewModels\Category\" />
+    <Folder Include="MVVM\ViewModels\History\" />
+    <Folder Include="MVVM\ViewModels\User\" />
   </ItemGroup>
 
 </Project>
