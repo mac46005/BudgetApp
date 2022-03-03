@@ -18,9 +18,9 @@ namespace BudgetApp_WPF.MVVM.Views
     /// <summary>
     /// Interaction logic for DashBoardView.xaml
     /// </summary>
-    public partial class DashBoardView : UserControl
+    public partial class CurrentMonthView : UserControl
     {
-        public DashBoardView()
+        public CurrentMonthView()
         {
             InitializeComponent();
         }

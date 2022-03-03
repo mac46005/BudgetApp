@@ -12,18 +12,60 @@
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="150"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <RadioButton Content="Home"/>
-                <RadioButton/>
-                <RadioButton/>
-                <RadioButton/>
-                <RadioButton/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!--Top Border-->
+            <Border Grid.ColumnSpan="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+                    <TextBlock Text="Budget App"/>
+                    <TextBlock Text="DATETIME"
+                               HorizontalAlignment="Center"/>
+                    <StackPanel HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+                        <Button Height="30"
+                                Width="30"
+                                Content="_"
+                                Click="Button_ClickMinimize"/>
+                        <Button Height="30"
+                                Width="30"
+                                Content="O"
+                                Click="Button_ClickMaximize"/>
+                        <Button Height="30"
+                                Width="30"
+                                Content="X"
+                                Click="Button_ClickClose"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            
+            
+            
+            
+            <!--Side Nav-->
+            <StackPanel Grid.Column="0"
+                        Grid.Row="1">
+                <RadioButton Content="CurrentMonth"/>
+                <RadioButton Content="Goal"/>
+                <RadioButton Content="History"/>
+                <RadioButton Content="Income"/>
+                <RadioButton Content="Expense"/>
+                <RadioButton Content="Manage Category"/>
+                <RadioButton Content="Manage User"/>
             </StackPanel>
-            
-            
+
+            <ContentControl Grid.Column="1"
+                            Grid.Row="1"/>
         </Grid>
     </Grid>
 </Window>
