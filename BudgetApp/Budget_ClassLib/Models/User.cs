@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.Models
 {
-    public class Person
+    public class User
     {
         public int ID { get; set; }
         public string FistName { get; set; }
