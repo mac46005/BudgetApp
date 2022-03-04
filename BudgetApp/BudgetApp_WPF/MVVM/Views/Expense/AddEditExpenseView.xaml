@@ -7,7 +7,87 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
+
+        <TextBlock Text="Income"
+                   Grid.ColumnSpan="2"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"/>
+
+
+
+
+
+        <TextBlock Text="User"
+                   Grid.Column="1"
+                   Grid.Row="1"/>
+        <TextBox Grid.Column="2"
+                 Grid.Row="1"/>
+
+
+
+        <TextBlock Text="Income Category"
+                   Grid.Column="1"
+                   Grid.Row="2"/>
+        <TextBox Grid.Column="2"
+                 Grid.Row="2"/>
+
+
+
+        <TextBlock Text="Amount"
+                   Grid.Column="1"
+                   Grid.Row="3"/>
+        <TextBox Grid.Column="2"
+                 Grid.Row="3"/>
+
+        <TextBlock Text="Time Stamp"
+                   Grid.Column="1"
+                   Grid.Row="4"/>
+        <TextBox Grid.Column="2"
+                 Grid.Row="4"/>
+
+
+        <TextBlock Text="Frequency"
+                   Grid.Column="1"
+                   Grid.Row="5"/>
+        <TextBox Grid.Column="2"
+                 Grid.Row="5"/>
+
+
+        <TextBlock Text="ReOccuring?"
+                   Grid.Column="1"
+                   Grid.Row="6"/>
+        <TextBox Grid.Column="2"
+                 Grid.Row="6"/>
+
+
+
+
+
+        <TextBlock Text="Note"
+                   Grid.Column="1"
+                   Grid.Row="7"/>
+        <TextBox Grid.Column="2"
+                 Grid.Row="7"/>
     </Grid>
 </UserControl>
 
