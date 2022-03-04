@@ -31,7 +31,6 @@
     <Folder Include="MVVM\Models\" />
     <Folder Include="MVVM\ViewModels\Category\" />
     <Folder Include="MVVM\ViewModels\History\" />
-    <Folder Include="MVVM\ViewModels\User\" />
   </ItemGroup>
 
 </Project>
