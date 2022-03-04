@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.DataAccess.Interfaces
 {
-    public interface IGetAll<T,U> where T : IModel<U>
+    public interface IDeleteAsync<T,U> where T : IModel<U>
     {
-        Task<IEnumerable<T>> GetAllAsync();
+        Task DeleteAsync(U id);
     }
 }

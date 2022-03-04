@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.DataAccess.Interfaces
 {
-    public interface IGet<T,U> where T : IModel<U>
+    public interface IUpdateASync<T,U> where T : IModel<U>
     {
-        Task<T> GetAsync(U id);
+        Task<T> UpdateAsync(U id);
     }
 }
