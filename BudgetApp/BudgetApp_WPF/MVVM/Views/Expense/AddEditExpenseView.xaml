@@ -23,12 +23,13 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
 
 
 
-        <TextBlock Text="Income"
+        <TextBlock Text="Expense"
                    Grid.ColumnSpan="2"
                    Grid.Column="1"
                    HorizontalAlignment="Center"/>
@@ -42,55 +43,60 @@
                    Grid.Row="1"/>
         <ComboBox Grid.Column="2"
                  Grid.Row="1"/>
+        
+        
+        
 
 
-
-        <TextBlock Text="Income Category"
+        <TextBlock Text="Expense Category"
                    Grid.Column="1"
                    Grid.Row="2"/>
-        <ComboBox Grid.Column="2"
-                 Grid.Row="2"/>
+        <Label Content="CATEGORY EXPENSE"
+               Grid.Column="2"
+               Grid.Row="2"/>
 
+
+        <TextBlock Text="Expense Subcategory"
+                   Grid.Column="1"
+                   Grid.Row="3"/>
+        <ComboBox Grid.Column="2"
+                  Grid.Row="3"/>
 
 
         <TextBlock Text="Amount"
                    Grid.Column="1"
-                   Grid.Row="3"/>
+                   Grid.Row="4"/>
         <TextBox Grid.Column="2"
-                 Grid.Row="3"/>
+                 Grid.Row="4"/>
 
         <TextBlock Text="Time Stamp"
                    Grid.Column="1"
-                   Grid.Row="4"/>
+                   Grid.Row="5"/>
         <DatePicker Grid.Column="2"
-                 Grid.Row="4"/>
+                 Grid.Row="5"/>
 
 
         <TextBlock Text="Frequency"
                    Grid.Column="1"
-                   Grid.Row="5"/>
+                   Grid.Row="6"/>
         <ComboBox Grid.Column="2"
-                 Grid.Row="5"/>
+                 Grid.Row="6"/>
 
 
         <TextBlock Text="ReOccuring?"
                    Grid.Column="1"
-                   Grid.Row="6"/>
+                   Grid.Row="7"/>
         <StackPanel Grid.Column="2"
-                    Grid.Row="6">
+                    Grid.Row="7">
             <RadioButton Content="Yes" GroupName="IsReoccurring"/>
             <RadioButton Content="No" GroupName="IsReoccurring"/>
         </StackPanel>
 
-
-
-
-
         <TextBlock Text="Note"
                    Grid.Column="1"
-                   Grid.Row="7"/>
+                   Grid.Row="8"/>
         <TextBox Grid.Column="2"
-                 Grid.Row="7"
+                 Grid.Row="8"
                  TextWrapping="Wrap"/>
         
         
