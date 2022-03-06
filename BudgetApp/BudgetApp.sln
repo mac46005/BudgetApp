@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budget_ClassLib", "Budget_ClassLib\Budget_ClassLib.csproj", "{75E4817E-E552-4BF3-BBDC-CD983BAB6D66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetApp_WPF", "BudgetApp_WPF\BudgetApp_WPF.csproj", "{73A79F19-EEE5-475A-8DDF-02BEBABFE33F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetApp_WPF", "BudgetApp_WPF\BudgetApp_WPF.csproj", "{73A79F19-EEE5-475A-8DDF-02BEBABFE33F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BudgetApp_Db", "BudgetApp_Db\BudgetApp_Db.sqlproj", "{51012598-B93E-4098-BDAC-98FA057E1E5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{73A79F19-EEE5-475A-8DDF-02BEBABFE33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73A79F19-EEE5-475A-8DDF-02BEBABFE33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73A79F19-EEE5-475A-8DDF-02BEBABFE33F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51012598-B93E-4098-BDAC-98FA057E1E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51012598-B93E-4098-BDAC-98FA057E1E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51012598-B93E-4098-BDAC-98FA057E1E5E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{51012598-B93E-4098-BDAC-98FA057E1E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51012598-B93E-4098-BDAC-98FA057E1E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51012598-B93E-4098-BDAC-98FA057E1E5E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="2a4b03ff-9484-4df8-bf8c-77e21d8e4704" ChangeDateTime="03/06/2022 17:33:30">
+    <Property Name="ElementName" Value="[dbo].[Users].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Users]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5bb292d0-9cd5-4607-8cef-01baff59a1b8" ChangeDateTime="03/06/2022 17:34:51">
+    <Property Name="ElementName" Value="[dbo].[ExpenseCategories].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExpenseCategories]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7ec0e978-9ed6-44c8-b44f-5fbb774f16e3" ChangeDateTime="03/06/2022 17:36:28">
+    <Property Name="ElementName" Value="[dbo].[ExpenseSubCategories].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExpenseSubCategories]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExpenseCategory_ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="48bfea12-86ee-4e90-98c2-38cde8d60395" ChangeDateTime="03/06/2022 17:36:45">
+    <Property Name="ElementName" Value="[dbo].[ExpenseSubCategories].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExpenseSubCategories]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="14519ce3-830a-41cf-999e-ef933635d22c" ChangeDateTime="03/06/2022 17:48:09">
+    <Property Name="ElementName" Value="[dbo].[ExpenseItems].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExpenseItems]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3ffb276d-a7d4-4804-aaf8-970c4cde32ba" ChangeDateTime="03/06/2022 17:48:47">
+    <Property Name="ElementName" Value="[dbo].[ExpenseItems].[ExpenseCa]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExpenseItems]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExpenseCategory_ID" />
+  </Operation>
+</Operations>

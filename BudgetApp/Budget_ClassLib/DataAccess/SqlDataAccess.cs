@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.DataAccess
 {
-    public class SqlDataAccess
+    public class SqlDataAccess : ISqlDataAccess
     {
         IConfiguration _configuration;
         public SqlDataAccess(IConfiguration configuration)
@@ -26,15 +26,15 @@ namespace Budget_ClassLib.DataAccess
 
 
 
-        public async Task ModifyData<T,U>(string connectionName,string storedProcedure,T data,U parameter = default)
+        public async Task ModifyData<T, U>(string connectionName, string storedProcedure,U parameter = default)
         {
             using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionName)))
             {
-                await connection.QueryAsync<T>(storedProcedure,parameter,commandType: CommandType.StoredProcedure);
+                await connection.QueryAsync<T>(storedProcedure, parameter, commandType: CommandType.StoredProcedure);
             }
         }
 
-        public async Task<IEnumerable<T>> LoadData<T, U>(string connectionName, string storedProcedure,T data, U parameter = default)
+        public async Task<IEnumerable<T>> LoadData<T, U>(string connectionName, string storedProcedure,U parameter = default)
         {
             using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionName)))
             {

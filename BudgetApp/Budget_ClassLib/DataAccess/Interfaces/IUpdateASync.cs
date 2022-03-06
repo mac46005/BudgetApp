@@ -8,6 +8,6 @@ namespace Budget_ClassLib.DataAccess.Interfaces
 {
     public interface IUpdateASync<T,U> where T : IModel<U>
     {
-        Task<T> UpdateAsync(U id);
+        Task<T> UpdateAsync(U id, T entity);
     }
 }

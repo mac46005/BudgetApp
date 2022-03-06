@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budget_ClassLib.DataAccess.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.Models
 {
-    public class ExpenseItem
+    public class ExpenseItem : IModel<long>
     {
         public long ID { get; set; }
         public int PersonID { get; set; }

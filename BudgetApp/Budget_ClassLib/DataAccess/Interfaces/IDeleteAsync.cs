@@ -8,6 +8,6 @@ namespace Budget_ClassLib.DataAccess.Interfaces
 {
     public interface IDeleteAsync<T,U> where T : IModel<U>
     {
-        Task DeleteAsync(U id);
+        Task DeleteAsync(T entity);
     }
 }
