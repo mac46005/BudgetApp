@@ -20,7 +20,7 @@ namespace Budget_ClassLib.DataAccess
 
         private string GetConnectionString(string connectionName)
         {
-            return _configuration.GetConnectionString("");
+            return _configuration.GetConnectionString(connectionName);
         }
 
 
@@ -28,9 +28,17 @@ namespace Budget_ClassLib.DataAccess
 
         public async Task ModifyData<T,U>(string connectionName,string storedProcedure,T data,U parameter = default)
         {
-            using (IDbConnection connection = new SqlConnection())
+            using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionName)))
             {
                 await connection.QueryAsync<T>(storedProcedure,parameter,commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public async Task<IEnumerable<T>> LoadData<T, U>(string connectionName, string storedProcedure,T data, U parameter = default)
+        {
+            using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionName)))
+            {
+                return await connection.QueryAsync<T>(storedProcedure, parameter, commandType: CommandType.StoredProcedure);
             }
         }
     }
