@@ -55,13 +55,20 @@
             <!--Side Nav-->
             <StackPanel Grid.Column="0"
                         Grid.Row="1">
-                <RadioButton Content="CurrentMonth"/>
-                <RadioButton Content="Goal"/>
-                <RadioButton Content="History"/>
-                <RadioButton Content="Income"/>
-                <RadioButton Content="Expense"/>
-                <RadioButton Content="Manage Category"/>
-                <RadioButton Content="Manage User"/>
+                <RadioButton Content="CurrentMonth"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="Goal"
+                              Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="History"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="Income"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="Expense"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="Manage Category"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="Manage User"
+                             Style="{StaticResource MenuButtonTheme}"/>
             </StackPanel>
 
             <ContentControl Grid.Column="1"

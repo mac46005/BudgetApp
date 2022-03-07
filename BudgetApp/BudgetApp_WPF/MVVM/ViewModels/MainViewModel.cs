@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels
 {
-    internal class DashBoardViewModel
+    internal class MainViewModel<T> : BaseViewModel<IEnumerable<T>>
     {
+
     }
 }
