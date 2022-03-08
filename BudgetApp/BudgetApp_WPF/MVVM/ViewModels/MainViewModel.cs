@@ -1,6 +1,7 @@
 ﻿using BudgetApp_WPF.Core;
 using BudgetApp_WPF.MVVM.ViewModels.Category;
 using BudgetApp_WPF.MVVM.ViewModels.Expense;
+using BudgetApp_WPF.MVVM.ViewModels.History;
 using BudgetApp_WPF.MVVM.ViewModels.Income;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,18 @@ namespace BudgetApp_WPF.MVVM.ViewModels
                 _currentMonethViewModel = value;
                 OnPropertyChanged("CurrentMonthViewModel");
             } 
+        }
+
+
+        private HistoryDashBoardViewModel _historyDashBoardViewModel;
+        public HistoryDashBoardViewModel HistoryDashBoardViewModel
+        {
+            get { return _historyDashBoardViewModel;}
+            set
+            {
+                _historyDashBoardViewModel = value;
+                OnPropertyChanged("HistoryDashBoardViewModel");
+            }
         }
 
 
