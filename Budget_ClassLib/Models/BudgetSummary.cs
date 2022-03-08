@@ -15,7 +15,7 @@ namespace Budget_ClassLib.Models
         {
             get
             {
-                decimal debtToIncomeRatio = (TotalExpenses / TotalIncome) * 100;
+                decimal debtToIncomeRatio = (TotalExpenses / TotalIncome) * 100; //mulitplying by 100 is a good idea. Better than a deecimal :)//
                 return debtToIncomeRatio.ToString("P");
             }
         }

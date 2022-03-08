@@ -1,0 +1,71 @@
+﻿<Window x:Class="BudgetApp_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BudgetApp_WPF"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Height="900"
+        Width="960">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!--Top Border-->
+            <Border Grid.ColumnSpan="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+                    <TextBlock Text="Budget App"/>
+                    <TextBlock Text="DATETIME"
+                               HorizontalAlignment="Center"/>
+                    <StackPanel HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+                        <Button Height="30"
+                                Width="30"
+                                Content="_"
+                                Click="Button_ClickMinimize"/>
+                        <Button Height="30"
+                                Width="30"
+                                Content="O"
+                                Click="Button_ClickMaximize"/>
+                        <Button Height="30"
+                                Width="30"
+                                Content="X"
+                                Click="Button_ClickClose"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            
+            
+            
+            
+            <!--Side Nav-->
+            <StackPanel Grid.Column="0"
+                        Grid.Row="1">
+                <RadioButton Content="CurrentMonth"/>
+                <RadioButton Content="Goal"/>
+                <RadioButton Content="History"/>
+                <RadioButton Content="Income"/>
+                <RadioButton Content="Expense"/>
+                <RadioButton Content="Manage Category"/>
+                <RadioButton Content="Manage User"/>
+            </StackPanel>
+
+            <ContentControl Grid.Column="1"
+                            Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</Window>
