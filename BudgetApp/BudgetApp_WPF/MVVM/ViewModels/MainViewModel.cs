@@ -1,6 +1,7 @@
 ﻿using BudgetApp_WPF.Core;
 using BudgetApp_WPF.MVVM.ViewModels.Category;
 using BudgetApp_WPF.MVVM.ViewModels.Expense;
+using BudgetApp_WPF.MVVM.ViewModels.Income;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -39,7 +40,16 @@ namespace BudgetApp_WPF.MVVM.ViewModels
         }
 
 
-
+        private IncomeDashBoardViewModel _incomeDashBoardViewModel;
+        public IncomeDashBoardViewModel IncomeDashBoardViewModel
+        {
+            get { return _incomeDashBoardViewModel; }
+            set
+            {
+                _incomeDashBoardViewModel = value;
+                OnPropertyChanged("IncomeDashBoardViewModel");
+            }
+        }
 
 
         private ExpenseDashBoardViewModel _expenseDashBoardViewModel;
