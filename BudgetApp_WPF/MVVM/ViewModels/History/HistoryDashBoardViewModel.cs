@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.MVVM.ViewModels
+namespace BudgetApp_WPF.MVVM.ViewModels.History
 {
-    internal class DashBoardViewModel
+    internal class HistoryDashBoardViewModel
     {
     }
 }

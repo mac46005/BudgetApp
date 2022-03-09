@@ -27,10 +27,6 @@
   <ItemGroup>
     <Folder Include="Core\Assets\" />
     <Folder Include="Core\Commands\" />
-    <Folder Include="Core\Enums\" />
-    <Folder Include="MVVM\Models\" />
-    <Folder Include="MVVM\ViewModels\Category\" />
-    <Folder Include="MVVM\ViewModels\History\" />
   </ItemGroup>
 
 </Project>
