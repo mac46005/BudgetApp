@@ -10,6 +10,7 @@ namespace BudgetApp_WPF.Core.Enums
     {
         Current,
         Goal,
+        History,
         Income,
         Expense,
         Category,
