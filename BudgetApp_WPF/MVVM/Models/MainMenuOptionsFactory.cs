@@ -1,5 +1,4 @@
 ﻿using BudgetApp_WPF.MVVM.ViewModels;
-using BudgetApp_WPF.MVVM.ViewModels.
 using BudgetApp_WPF.MVVM.ViewModels.Category;
 using BudgetApp_WPF.MVVM.ViewModels.Expense;
 using BudgetApp_WPF.MVVM.ViewModels.History;

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using BudgetApp_WPF.MVVM.ViewModels;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,12 @@ namespace BudgetApp_WPF
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            Configuration = BuildConfiguration();
+            serviceProvider = CreateServiceProvider();
+            Window window = new MainWindow();
+            window.DataContext = serviceProvider.GetRequiredService<MainViewModel>();
+            window.Show();
+
         }
 
 
@@ -31,7 +38,7 @@ namespace BudgetApp_WPF
             
 
             services.AddSingleton<IConfiguration>(Configuration);
-
+            services.AddScoped<MainViewModel>();
 
             return services.BuildServiceProvider();
         }
