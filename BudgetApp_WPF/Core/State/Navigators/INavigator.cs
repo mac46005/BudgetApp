@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.Core.Enums
+namespace BudgetApp_WPF.Core.State.Navigators
 {
-    public enum MainMenuOptionsEnum
+    public enum NavigationOptions
     {
         Current,
         Goal,
@@ -16,5 +16,8 @@ namespace BudgetApp_WPF.Core.Enums
         Category,
         User,
         Settings
+    }
+    public interface INavigator
+    {
     }
 }

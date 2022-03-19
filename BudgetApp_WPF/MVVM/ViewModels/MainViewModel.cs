@@ -1,10 +1,12 @@
 ﻿using BudgetApp_WPF.Core;
+using BudgetApp_WPF.Core.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels
 {
@@ -26,7 +28,8 @@ namespace BudgetApp_WPF.MVVM.ViewModels
 
         public MainViewModel()
         {
-
+            
         }
+        public ICommand SelectMainMenuOptionCommand => new SelectMainMenuOptionCommand(this);
     }
 }

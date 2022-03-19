@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BudgetApp_WPF"
+        xmlns:enums="clr-namespace:BudgetApp_WPF.Core.Enums"
         mc:Ignorable="d"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -55,13 +56,27 @@
             <!--Side Nav-->
             <StackPanel Grid.Column="0"
                         Grid.Row="1">
-                <RadioButton Content="CurrentMonth"/>
-                <RadioButton Content="Goal"/>
-                <RadioButton Content="History"/>
-                <RadioButton Content="Income"/>
-                <RadioButton Content="Expense"/>
-                <RadioButton Content="Manage Category"/>
-                <RadioButton Content="Manage User"/>
+                <RadioButton Content="CurrentMonth"
+                             Command="{Binding SelectMainMenuOptionCommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Current}"/>
+                <RadioButton Content="Goal"
+                             />
+                <RadioButton Content="History"
+                             Command="{Binding SelectMainMenuOptionCommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.History}"/>
+                <RadioButton Content="Income"
+                             Command="{Binding SelectMainMenuOptionCommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Income}"/>
+                <RadioButton Content="Expense"
+                             Command="{Binding SelectMainMenuOptionCommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Expense}"/>
+                <RadioButton Content="Manage Category"
+                             Command="{Binding SelectMainMenuOptionCommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Category}"/>
+                <RadioButton Content="Manage User"
+                             Command="{Binding SelectMainMenuOptionCommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.User}"
+                             />
             </StackPanel>
 
             <ContentControl Grid.Column="1"
