@@ -7,8 +7,8 @@ namespace BudgetApp_API.DataAccess
 {
     internal abstract class BaseSqlDataAccess
     {
-        SqlDataAccessByStoredProcedureAsync _sqlDataAccessByStoredProcedureAsync;
-        SqlDataAccessByInTextSQLAsync _sqlDataAccessByInTextSqlAsync;
+        protected SqlDataAccessByStoredProcedureAsync _sqlDataAccessByStoredProcedureAsync;
+        protected SqlDataAccessByInTextSQLAsync _sqlDataAccessByInTextSqlAsync;
         public BaseSqlDataAccess(
             SqlDataAccessByStoredProcedureAsync sqlDataAccessByStoredProcedureAsync, 
             SqlDataAccessByInTextSQLAsync sqlDataAccessByInTextSqlAsync)

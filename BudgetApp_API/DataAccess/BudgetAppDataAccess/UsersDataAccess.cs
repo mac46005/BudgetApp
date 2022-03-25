@@ -20,9 +20,9 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
         }
 
 
-        public Task DeleteAsync(int ID)
+        public async Task DeleteAsync(int ID)
         {
-            throw new NotImplementedException();
+            await _sqlDataAccessByStoredProcedureAsync.ModifyDataAsync<User, dynamic>("","",new { ID = ID });
         }
 
         public Task<IEnumerable<User>> GetAllAsync()
