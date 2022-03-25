@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_API.DataAccess.Interfaces
 {
-    internal interface IGetAsync<T, U> where T : BaseModel<U>
+    public interface IGetAsync<T, U> where T : BaseModel<U>
     {
         Task<T> GetAsync(U ID);
     }

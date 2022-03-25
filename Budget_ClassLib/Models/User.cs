@@ -9,7 +9,7 @@ namespace Budget_ClassLib.Models
     public class User : BaseModel<int>
     {
         public int ID { get; set; }
-        public string FistName { get; set; } = String.Empty;
+        public string FirstName { get; set; } = String.Empty;
         public string LastName { get; set; } = String.Empty;
     }
 }

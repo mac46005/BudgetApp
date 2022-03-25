@@ -63,11 +63,11 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
 
         public async Task InsertAsync(User obj)
         {
-            await _sqlDataAccessByStoredProcedureAsync.ModifyDataAsync<User, User>
+            await _sqlDataAccessByStoredProcedureAsync.ModifyDataAsync<User, dynamic>
                 (
                 _sqlStringHelper.ConnectionName,
                 _sqlStringHelper.StoredProcedureName("InsertUser"),
-                obj
+                new { FirstName = obj.FirstName, LastName = obj.LastName }
                 );
         }
 

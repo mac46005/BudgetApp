@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_API.DataAccess.Interfaces
 {
-    internal interface ICRUDDataAccessAsync<T, U> : IInsertAsync<T,U>,IGetAsync<T, U>, IGetAllAsync<T,U>, IUpdateAsync<T, U>, IDeleteAsync<T, U> where T : BaseModel<U>
+    public interface ICRUDDataAccessAsync<T, U> : IInsertAsync<T,U>,IGetAsync<T, U>, IGetAllAsync<T,U>, IUpdateAsync<T, U>, IDeleteAsync<T, U> where T : BaseModel<U>
     {
     }
 }

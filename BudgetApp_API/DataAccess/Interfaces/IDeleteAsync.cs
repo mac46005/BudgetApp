@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_API.DataAccess.Interfaces
 {
-    internal interface IDeleteAsync<T, U> where T : BaseModel<U>
+    public interface IDeleteAsync<T, U> where T : BaseModel<U>
     {
         Task DeleteAsync(U ID);
     }

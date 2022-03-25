@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_API.DataAccess.Interfaces
 {
-    internal interface IInsertAsync<T,U> where T :BaseModel<U>
+    public interface IInsertAsync<T,U> where T :BaseModel<U>
     {
         Task InsertAsync(T obj);
     }

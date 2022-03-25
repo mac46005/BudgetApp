@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_API.DataAccess.Interfaces
 {
-    internal interface IUpdateAsync<T, U> where T : BaseModel<U>
+    public interface IUpdateAsync<T, U> where T : BaseModel<U>
     {
         Task UpdateAsync(T obj, U ID);
     }

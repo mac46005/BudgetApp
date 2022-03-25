@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Budget_ClassLib.Models;
+using BudgetApp_API.DataAccess.BudgetAppDataAccess;
+using BudgetApp_API.DataAccess.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +15,47 @@ namespace BudgetApp_API.Controllers
     [ApiController]
     public class UsersEndPointController : ControllerBase
     {
+        ICRUDDataAccessAsync<User,int> _usersDataAccess;
+        public UsersEndPointController(ICRUDDataAccessAsync<User,int> usersDataAccess)
+        {
+            _usersDataAccess = usersDataAccess;
+        }
+
+
+
         // GET: api/<UsersController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<User>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return await _usersDataAccess.GetAllAsync();
         }
 
         // GET api/<UsersController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<User> Get(int id)
         {
-            return "value";
+            return await _usersDataAccess.GetAsync(id);
         }
 
         // POST api/<UsersController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task Post(User value)
         {
+            await _usersDataAccess.InsertAsync(value);
         }
+
 
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, User value)
         {
         }
 
         // DELETE api/<UsersController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
+            await _usersDataAccess.DeleteAsync(id);
         }
     }
 }
