@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
@@ -26,6 +26,10 @@
 
   <ItemGroup>
     <Folder Include="Core\Assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetDB_APIAccess_ClassLib\BudgetDB_APIAccess_ClassLib.csproj" />
   </ItemGroup>
 
 </Project>

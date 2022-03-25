@@ -1,4 +1,7 @@
-﻿using BudgetApp_WPF.MVVM.ViewModels;
+﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.MVVM.ViewModels;
+using BudgetDB_APIAccess_ClassLib.API;
+using BudgetDB_APIAccess_ClassLib.API.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -39,6 +42,17 @@ namespace BudgetApp_WPF
 
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddScoped<MainViewModel>();
+
+            services.AddSingleton<IAPIClient, APIClient>();
+
+
+
+
+            // NOTE: Test connection out ONLY
+            // Later the classe in the list will
+            // Depending on the needs...
+            services.AddTransient<IAPIEndpoint<User, int>, UsersDataEndpoint>();
+
 
             return services.BuildServiceProvider();
         }
