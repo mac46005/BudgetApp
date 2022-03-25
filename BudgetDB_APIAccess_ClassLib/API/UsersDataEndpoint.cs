@@ -109,7 +109,10 @@ namespace BudgetDB_APIAccess_ClassLib.API
             }
         }
 
-        public Task PutAsync(User obj, int ID)
+
+
+
+        public async Task PutAsync(User obj, int ID)
         {
             throw new NotImplementedException();
         }
