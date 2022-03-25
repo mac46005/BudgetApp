@@ -9,6 +9,8 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
 {
     internal class UsersDataAccess : BaseSqlDataAccess,ICRUDDataAccessAsync<User, int>
     {
+        SqlStringHelper _sqlStringHelper = new SqlStringHelper("Users", "BudgetDB");
+
 
         public UsersDataAccess(
             SqlDataAccessByStoredProcedureAsync sqlDataAccessByStoredProcedureAsync, 
@@ -22,22 +24,42 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
 
         public async Task DeleteAsync(int ID)
         {
-            await _sqlDataAccessByStoredProcedureAsync.ModifyDataAsync<User, dynamic>("","",new { ID = ID });
+            await _sqlDataAccessByStoredProcedureAsync.ModifyDataAsync<User, dynamic>
+                (
+                _sqlStringHelper.ConnectionName,
+                _sqlStringHelper.StoredProcedureName("DeleteUser"),
+                new { ID = ID }
+                );
         }
 
-        public Task<IEnumerable<User>> GetAllAsync()
+        public async Task<IEnumerable<User>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _sqlDataAccessByStoredProcedureAsync.LoadMultiDataAsync<User>
+                (
+                _sqlStringHelper.ConnectionName,
+                _sqlStringHelper.StoredProcedureName("GetAllUsers")
+                );
         }
 
-        public Task<User> GetAsync(int ID)
+        public async Task<User> GetAsync(int ID)
         {
-            throw new NotImplementedException();
+            return await _sqlDataAccessByStoredProcedureAsync.LoadSingleDataAsync<User, dynamic>
+                (
+                _sqlStringHelper.ConnectionName,
+                _sqlStringHelper.StoredProcedureName("GetUser"),
+                new { ID = ID }
+                );
         }
 
-        public Task UpdateAsync(User obj, int ID)
+        public async Task UpdateAsync(User obj, int ID)
         {
-            throw new NotImplementedException();
+            obj.ID = ID;
+            await _sqlDataAccessByStoredProcedureAsync.ModifyDataAsync<User, User>
+                (
+                _sqlStringHelper.ConnectionName,
+                _sqlStringHelper.StoredProcedureName("UpdateUser"),
+                obj
+                );
         }
     }
 }

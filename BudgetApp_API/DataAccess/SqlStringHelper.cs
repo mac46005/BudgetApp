@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_API.DataAccess
 {
-    public class SqlStringHelper
+    internal class SqlStringHelper
     {
         private string _tableName;
 
-        public SqlStringHelper(string tableName)
+        public string ConnectionName { get; private set; }
+
+        public SqlStringHelper(string tableName, string connectionName)
         {
             _tableName = tableName;
+            ConnectionName = connectionName;
         }
 
         public string StoredProcedureName(string procedureName)
