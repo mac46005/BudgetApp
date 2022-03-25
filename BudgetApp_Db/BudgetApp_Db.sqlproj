@@ -59,6 +59,7 @@
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="Published" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Users.sql" />
@@ -74,5 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BudgetApp_Db.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Published\BudgetApp_Db.publish.xml" />
   </ItemGroup>
 </Project>

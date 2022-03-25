@@ -1,3 +1,7 @@
+using Budget_ClassLib.Models;
+using BudgetApp_API.DataAccess;
+using BudgetApp_API.DataAccess.BudgetAppDataAccess;
+using BudgetApp_API.DataAccess.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +36,16 @@ namespace BudgetApp_API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BudgetApp_API", Version = "v1" });
             });
+
+
+
+            services
+                .AddTransient<SqlDataAccessByStoredProcedureAsync>()
+                .AddTransient<SqlDataAccessByInTextSQLAsync>();
+
+            services
+                .AddTransient<ICRUDDataAccessAsync<User, int>,UsersDataAccess>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
