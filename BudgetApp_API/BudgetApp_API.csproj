@@ -14,8 +14,4 @@
     <ProjectReference Include="..\Budget_ClassLib\Budget_ClassLib.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DataAccess\BudgetAppDataAccess\" />
-  </ItemGroup>
-
 </Project>

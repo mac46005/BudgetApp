@@ -9,10 +9,10 @@ using Microsoft.Extensions.Configuration;
 
 namespace BudgetApp_API.DataAccess
 {
-    internal class SqlDataAccess 
+    internal class SqlDataAccessAsync 
     {
         IConfiguration _configuration;
-        public SqlDataAccess(IConfiguration configuration)
+        public SqlDataAccessAsync(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -23,26 +23,26 @@ namespace BudgetApp_API.DataAccess
         }
 
 
-        public T LoadSingleData<T,U>(string connectionName, string storedProcedure,U parameter)
+        public async Task<T> LoadSingleData<T,U>(string connectionName, string storedProcedure,U parameter)
         {
             using (IDbConnection conn = new SqlConnection(GetConnectionString(connectionName)))
             {
-                var result = conn.Query<T>(storedProcedure, parameter, commandType: CommandType.StoredProcedure);
+                var result = await conn.QueryAsync<T>(storedProcedure, parameter, commandType: CommandType.StoredProcedure);
                 return result.FirstOrDefault();
             }
         }
-        public IEnumerable<T> LoadMultiData<T>(string connectionName, string storedProcedure)
+        public async Task<IEnumerable<T>> LoadMultiData<T>(string connectionName, string storedProcedure)
         {
             using(IDbConnection conn = new SqlConnection(GetConnectionString(connectionName)))
             {
-                return conn.Query<T>(storedProcedure, commandType: CommandType.StoredProcedure);
+                return await conn.QueryAsync<T>(storedProcedure, commandType: CommandType.StoredProcedure);
             }
         }
-        public void ModifyData<T,U>(string connectionName, string storedProcedure, U parameter)
+        public async Task ModifyData<T,U>(string connectionName, string storedProcedure, U parameter)
         {
             using(IDbConnection conn = new SqlConnection(GetConnectionString(connectionName)))
             {
-                conn.Query<T>(storedProcedure, parameter, commandType: CommandType.StoredProcedure);
+                await conn.QueryAsync<T>(storedProcedure, parameter, commandType: CommandType.StoredProcedure);
             }
         }
     }
