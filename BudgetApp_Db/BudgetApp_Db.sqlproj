@@ -70,6 +70,7 @@
     <Build Include="dbo\Stored Procedures\spUsers_UpdateUser.sql" />
     <Build Include="dbo\Stored Procedures\spUsers_DeleteUser.sql" />
     <Build Include="dbo\Stored Procedures\spUsers_GetAllUsers.sql" />
+    <Build Include="dbo\Stored Procedures\spUsers_GetUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BudgetApp_Db.refactorlog" />
