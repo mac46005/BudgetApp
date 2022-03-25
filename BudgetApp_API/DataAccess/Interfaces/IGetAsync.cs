@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BudgetApp_API.DataAccess
+namespace BudgetApp_API.DataAccess.Interfaces
 {
-    internal interface IDeleteAsync<T,U>
+    internal interface IGetAsync<T, U>
     {
-        Task DeleteAsync(U ID);
+        Task<T> GetAsync(U ID);
     }
 }

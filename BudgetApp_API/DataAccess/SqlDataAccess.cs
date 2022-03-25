@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace BudgetApp_API.DataAccess
 {
-    public class SqlDataAccess 
+    internal class SqlDataAccess 
     {
         IConfiguration _configuration;
         public SqlDataAccess(IConfiguration configuration)
