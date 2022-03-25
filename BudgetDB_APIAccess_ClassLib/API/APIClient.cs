@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BudgetDB_APIAccess_ClassLib.API
 {
-    public class APIClient
+    public class APIClient : IAPIClient
     {
 
         IConfiguration _configuration;
@@ -31,6 +31,7 @@ namespace BudgetDB_APIAccess_ClassLib.API
         public APIClient(IConfiguration configuration)
         {
             _configuration = configuration;
+            InitializeClient();
         }
 
 
