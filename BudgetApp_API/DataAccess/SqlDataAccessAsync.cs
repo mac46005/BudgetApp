@@ -23,7 +23,7 @@ namespace BudgetApp_API.DataAccess
         }
 
 
-        public async Task<T> LoadSingleDataAsync<T,U>(string connectionName, string storedProcedure,U parameter)
+        public async Task<T> LoadSingleDataStoredProcedureAsync<T,U>(string connectionName, string storedProcedure,U parameter)
         {
             using (IDbConnection conn = new SqlConnection(GetConnectionString(connectionName)))
             {
@@ -31,14 +31,14 @@ namespace BudgetApp_API.DataAccess
                 return result.FirstOrDefault();
             }
         }
-        public async Task<IEnumerable<T>> LoadMultiDataAsync<T>(string connectionName, string storedProcedure)
+        public async Task<IEnumerable<T>> LoadMultiDataStoredProcedureAsync<T>(string connectionName, string storedProcedure)
         {
             using(IDbConnection conn = new SqlConnection(GetConnectionString(connectionName)))
             {
                 return await conn.QueryAsync<T>(storedProcedure, commandType: CommandType.StoredProcedure);
             }
         }
-        public async Task ModifyDataAsync<T,U>(string connectionName, string storedProcedure, U parameter)
+        public async Task ModifyDataStoredProcedureAsync<T,U>(string connectionName, string storedProcedure, U parameter)
         {
             using(IDbConnection conn = new SqlConnection(GetConnectionString(connectionName)))
             {
