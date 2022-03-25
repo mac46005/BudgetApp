@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.Models
 {
-    public class ExpenseItem : IModel<long>
+    public class ExpenseItem : BaseModel<long>
     {
         public long ID { get; set; }
         public int PersonID { get; set; }

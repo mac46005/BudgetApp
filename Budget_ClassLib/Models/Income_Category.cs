@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.Models
 {
-    public class Income_Category : IModel<int>
+    public class Income_Category : BaseModel<int>
     {
         public int ID { get; set; }
         public string Name { get; set; }
