@@ -22,6 +22,10 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
         }
 
 
+
+
+
+
         public async Task DeleteAsync(int ID)
         {
             await _sqlDataAccessByStoredProcedureAsync.ModifyDataAsync<User, dynamic>
@@ -32,6 +36,10 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
                 );
         }
 
+
+
+
+
         public async Task<IEnumerable<User>> GetAllAsync()
         {
             return await _sqlDataAccessByStoredProcedureAsync.LoadMultiDataAsync<User>
@@ -41,6 +49,10 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
                 );
         }
 
+
+
+
+
         public async Task<User> GetAsync(int ID)
         {
             return await _sqlDataAccessByStoredProcedureAsync.LoadSingleDataAsync<User, dynamic>
@@ -48,6 +60,16 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
                 _sqlStringHelper.ConnectionName,
                 _sqlStringHelper.StoredProcedureName("GetUser"),
                 new { ID = ID }
+                );
+        }
+
+        public async Task InsertAsync(User obj)
+        {
+            await _sqlDataAccessByStoredProcedureAsync.ModifyDataAsync<User, User>
+                (
+                _sqlStringHelper.ConnectionName,
+                _sqlStringHelper.StoredProcedureName("InsertUser"),
+                obj
                 );
         }
 
