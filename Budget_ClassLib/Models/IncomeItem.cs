@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Budget_ClassLib.Models
 {
-    public class IncomeItem : BaseModel<int>
+    public class IncomeItem : BaseModel<long>
     {
-        public int ID { get; set; }
+        public long ID { get; set; }
         public int PersonID { get; set; }
         public int IncomeCategory_ID { get; set; }
         public decimal Amount { get; set; }
