@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories
 {
-    public class UserViewsFactories
+    public class UsersViewsFactory
     {
         IAPIEndpoint<User, int> _usersDataEndPoint;
-        public UserViewsFactories(IAPIEndpoint<User,int> usersDataEndPoint)
+        public UsersViewsFactory(IAPIEndpoint<User,int> usersDataEndPoint)
         {
             _usersDataEndPoint = usersDataEndPoint;
         }

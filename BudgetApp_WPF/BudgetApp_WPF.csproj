@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BudgetApp_API\BudgetApp_API.csproj" />
     <ProjectReference Include="..\BudgetDB_APIAccess_ClassLib\BudgetDB_APIAccess_ClassLib.csproj" />
   </ItemGroup>
 

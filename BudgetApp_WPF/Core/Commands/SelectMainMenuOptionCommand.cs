@@ -1,4 +1,5 @@
 ﻿using BudgetApp_WPF.Core.Enums;
+using BudgetApp_WPF.Core.Factories;
 using BudgetApp_WPF.MVVM.ViewModels;
 using BudgetApp_WPF.MVVM.ViewModels.Category;
 using BudgetApp_WPF.MVVM.ViewModels.Expense;
@@ -19,7 +20,7 @@ namespace BudgetApp_WPF.Core.Commands
         public event EventHandler? CanExecuteChanged;
         MainViewModel _mainViewModel;
         /// ViewModel FACTORIES?
-        
+        UsersViewsFactory _usersViewsFactory;
 
 
 
@@ -34,9 +35,10 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
-        public SelectMainMenuOptionCommand(MainViewModel mainViewModel)
+        public SelectMainMenuOptionCommand(MainViewModel mainViewModel, UsersViewsFactory userViewsFactories)
         {
             _mainViewModel = mainViewModel;
+            _usersViewsFactory = userViewsFactories;
         }
 
 
@@ -79,7 +81,7 @@ namespace BudgetApp_WPF.Core.Commands
                     _mainViewModel.CurrentViewModel = new CategoryDashBoardViewModel();
                     break;
                 case MainMenuOptionsEnum.User:
-                    _mainViewModel.CurrentViewModel = new UserDashBoardViewModel();
+                    _mainViewModel.CurrentViewModel = _usersViewsFactory.CreateUserDashBoardViewModel();
                     break;
                 case MainMenuOptionsEnum.Settings:
                     

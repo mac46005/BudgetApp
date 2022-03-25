@@ -1,4 +1,5 @@
 ﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.Core.Factories;
 using BudgetApp_WPF.MVVM.ViewModels;
 using BudgetDB_APIAccess_ClassLib.API;
 using BudgetDB_APIAccess_ClassLib.API.Interfaces;
@@ -44,6 +45,21 @@ namespace BudgetApp_WPF
             services.AddScoped<MainViewModel>();
 
             services.AddSingleton<IAPIClient, APIClient>();
+
+
+
+
+
+
+            // View Factories
+            services.AddTransient<UsersViewsFactory>();
+            //
+
+
+
+
+
+
 
 
 
