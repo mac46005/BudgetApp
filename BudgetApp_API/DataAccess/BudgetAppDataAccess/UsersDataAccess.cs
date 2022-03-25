@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
 {
-    public class UsersDataAccess : ICRUDDataAccessAsync<User, int>
+    internal class UsersDataAccess : BaseSqlDataAccess,ICRUDDataAccessAsync<User, int>
     {
 
-        public UsersDataAccess()
+        public UsersDataAccess(
+            SqlDataAccessByStoredProcedureAsync sqlDataAccessByStoredProcedureAsync, 
+            SqlDataAccessByInTextSQLAsync sqlDataAccessByInTextSQLAsync
+            ) 
+            : base(sqlDataAccessByStoredProcedureAsync,sqlDataAccessByInTextSQLAsync)
         {
 
         }
