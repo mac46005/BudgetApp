@@ -10,8 +10,8 @@ namespace BudgetApp_WPF.Core.State.Navigators
 {
     internal class BaseNavigatorViewModel<T> : ObservableObject, INavigator<T>
     {
-        public BaseViewModel<T> CurrentViewModel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public BaseViewModel<T> CurrentViewModel { get; set; }
 
-        public ICommand UpdateCurrentViewModelICommand => throw new NotImplementedException();
+        public ICommand UpdateCurrentViewModelICommand { get; set; }
     }
 }

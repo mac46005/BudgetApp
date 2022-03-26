@@ -44,6 +44,6 @@ namespace BudgetApp_WPF.MVVM.ViewModels
 
 
 
-        public ICommand SelectMainMenuOptionCommand => new SelectMainMenuOptionCommand(this, _userViewsFactory);
+        public ICommand SelectMainMenuOptionCommand => new HomeMainMenuOptionCommand(this, _userViewsFactory);
     }
 }
