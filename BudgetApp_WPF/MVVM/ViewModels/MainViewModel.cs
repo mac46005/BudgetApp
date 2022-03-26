@@ -1,5 +1,6 @@
 ﻿using BudgetApp_WPF.Core;
 using BudgetApp_WPF.Core.Commands;
+using BudgetApp_WPF.Core.Factories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,11 @@ namespace BudgetApp_WPF.MVVM.ViewModels
     internal class MainViewModel : ObservableObject
     {
 
-        SelectMainMenuOptionCommand _selectMainMenuOptionCommand;
+        UsersViewsFactory _userViewsFactory;
+
+
+
+
 
         private object _currentViewMode = new CurrentMonthViewModel();
         public object CurrentViewModel 
@@ -26,11 +31,19 @@ namespace BudgetApp_WPF.MVVM.ViewModels
             }
         }
 
-        public MainViewModel(SelectMainMenuOptionCommand selectMainMenuOptionCommand)
+
+
+
+
+
+        public MainViewModel(UsersViewsFactory usersViewsFactory)
         {
-            _selectMainMenuOptionCommand = selectMainMenuOptionCommand;
-            _selectMainMenuOptionCommand.CurrentViewModel = this.CurrentViewModel;
+            _userViewsFactory = usersViewsFactory;
         }
-        public ICommand SelectMainMenuOptionCommand => _selectMainMenuOptionCommand;
+
+
+
+
+        public ICommand SelectMainMenuOptionCommand => new SelectMainMenuOptionCommand(this, _userViewsFactory);
     }
 }

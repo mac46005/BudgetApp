@@ -30,8 +30,7 @@ namespace BudgetApp_WPF
             base.OnStartup(e);
             Configuration = BuildConfiguration();
             serviceProvider = CreateServiceProvider();
-            Window window = new MainWindow();
-            window.DataContext = serviceProvider.GetRequiredService<MainViewModel>();
+            Window window = serviceProvider.GetRequiredService<MainWindow>();
             window.Show();
 
         }
@@ -43,6 +42,7 @@ namespace BudgetApp_WPF
             
 
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
             services.AddScoped<MainViewModel>();
 
             services.AddSingleton<IAPIClient, APIClient>();
@@ -56,8 +56,18 @@ namespace BudgetApp_WPF
             services.AddTransient<UsersViewsFactory>();
             //
 
+
+
+
+
+
+
+
+
+
+
+
             // Commands
-            services.AddTransient<SelectMainMenuOptionCommand>();
             //
 
 

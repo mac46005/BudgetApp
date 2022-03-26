@@ -20,9 +20,10 @@ namespace BudgetApp_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(object context)
         {
             InitializeComponent();
+            DataContext = context;
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

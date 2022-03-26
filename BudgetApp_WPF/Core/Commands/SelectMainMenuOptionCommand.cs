@@ -22,29 +22,24 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
-
+        MainViewModel _mainViewModel;
         /// ViewModel FACTORIES?
         UsersViewsFactory _usersViewsFactory;
 
 
 
 
-        /// 
-
-
-
-
-        public object CurrentViewModel { get; set; }
+        ///
 
 
 
 
 
-
-
-        public SelectMainMenuOptionCommand(UsersViewsFactory userViewsFactories)
+        public SelectMainMenuOptionCommand(MainViewModel mainViewModel,UsersViewsFactory usersViewsFactory)
         {
-            _usersViewsFactory = userViewsFactories;
+            _mainViewModel = mainViewModel;
+            _usersViewsFactory = usersViewsFactory;
+
         }
 
 
