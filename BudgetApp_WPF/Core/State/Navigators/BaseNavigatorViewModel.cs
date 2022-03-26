@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.Core.State.Navigators
 {
-    internal class BaseNavigatorView<T> : ObservableObject, INavigator<T>
+    internal class BaseNavigatorViewModel<T> : ObservableObject, INavigator<T>
     {
         public BaseViewModel<T> CurrentViewModel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
