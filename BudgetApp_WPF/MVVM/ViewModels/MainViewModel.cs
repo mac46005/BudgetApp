@@ -13,7 +13,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels
     internal class MainViewModel : ObservableObject
     {
 
-
+        SelectMainMenuOptionCommand _selectMainMenuOptionCommand;
 
         private object _currentViewMode = new CurrentMonthViewModel();
         public object CurrentViewModel 
@@ -26,10 +26,11 @@ namespace BudgetApp_WPF.MVVM.ViewModels
             }
         }
 
-        public MainViewModel()
+        public MainViewModel(SelectMainMenuOptionCommand selectMainMenuOptionCommand)
         {
-            
+            _selectMainMenuOptionCommand = selectMainMenuOptionCommand;
+            _selectMainMenuOptionCommand.CurrentViewModel = this.CurrentViewModel;
         }
-        public ICommand SelectMainMenuOptionCommand => new SelectMainMenuOptionCommand(this);
+        public ICommand SelectMainMenuOptionCommand => _selectMainMenuOptionCommand;
     }
 }

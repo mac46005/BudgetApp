@@ -18,7 +18,11 @@ namespace BudgetApp_WPF.Core.Commands
     internal class SelectMainMenuOptionCommand : ICommand
     {
         public event EventHandler? CanExecuteChanged;
-        MainViewModel _mainViewModel;
+
+
+
+
+
         /// ViewModel FACTORIES?
         UsersViewsFactory _usersViewsFactory;
 
@@ -30,14 +34,16 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
+        public object CurrentViewModel { get; set; }
 
 
 
 
 
-        public SelectMainMenuOptionCommand(MainViewModel mainViewModel, UsersViewsFactory userViewsFactories)
+
+
+        public SelectMainMenuOptionCommand(UsersViewsFactory userViewsFactories)
         {
-            _mainViewModel = mainViewModel;
             _usersViewsFactory = userViewsFactories;
         }
 
@@ -63,28 +69,28 @@ namespace BudgetApp_WPF.Core.Commands
             switch (mainMenuOptions)
             {
                 case MainMenuOptionsEnum.Current:
-                    _mainViewModel.CurrentViewModel = new CurrentMonthViewModel();
+                    CurrentViewModel = new CurrentMonthViewModel();
                     break;
                 case MainMenuOptionsEnum.Goal:
-                    
+                    throw new NotImplementedException("Implement a View for this option.");
                     break;
                 case MainMenuOptionsEnum.History:
-                    _mainViewModel.CurrentViewModel = new HistoryDashBoardViewModel();
+                    CurrentViewModel = new HistoryDashBoardViewModel();
                     break;
                 case MainMenuOptionsEnum.Income:
-                    _mainViewModel.CurrentViewModel = new IncomeDashBoardViewModel();
+                    CurrentViewModel = new IncomeDashBoardViewModel();
                     break;
                 case MainMenuOptionsEnum.Expense:
-                    _mainViewModel.CurrentViewModel = new ExpenseDashBoardViewModel();
+                    CurrentViewModel = new ExpenseDashBoardViewModel();
                     break;
                 case MainMenuOptionsEnum.Category:
-                    _mainViewModel.CurrentViewModel = new CategoryDashBoardViewModel();
+                    CurrentViewModel = new CategoryDashBoardViewModel();
                     break;
                 case MainMenuOptionsEnum.User:
-                    _mainViewModel.CurrentViewModel = _usersViewsFactory.CreateUserDashBoardViewModel();
+                    CurrentViewModel = _usersViewsFactory.CreateUserDashBoardViewModel();
                     break;
                 case MainMenuOptionsEnum.Settings:
-                    
+
                     break;
                 default:
                     break;

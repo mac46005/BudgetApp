@@ -1,4 +1,5 @@
 ﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Factories;
 using BudgetApp_WPF.MVVM.ViewModels;
 using BudgetDB_APIAccess_ClassLib.API;
@@ -55,6 +56,9 @@ namespace BudgetApp_WPF
             services.AddTransient<UsersViewsFactory>();
             //
 
+            // Commands
+            services.AddTransient<SelectMainMenuOptionCommand>();
+            //
 
 
 
