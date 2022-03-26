@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.User
 {
-    internal class AddEditUserViewModel
+    internal class AddEditUserViewModel : BaseViewModel<object>
     {
         IAPIEndpoint<Budget_ClassLib.Models.User, int> _usersDataEndPoint;
         public AddEditUserViewModel(IAPIEndpoint<Budget_ClassLib.Models.User,int> usersDataEndPoint)

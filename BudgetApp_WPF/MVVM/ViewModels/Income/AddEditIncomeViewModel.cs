@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.Income
 {
-    internal class AddEditIncomeViewModel
+    internal class AddEditIncomeViewModel : BaseViewModel<object>
     {
     }
 }

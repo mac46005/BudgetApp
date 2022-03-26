@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.User
 {
-    internal class UserDashBoardViewModel
+    internal class UserDashBoardViewModel : BaseViewModel<object>
     {
         IAPIEndpoint<Budget_ClassLib.Models.User, int> _usersDataEndPoint;
         public UserDashBoardViewModel(IAPIEndpoint<Budget_ClassLib.Models.User,int> usersDataEndPoint)
