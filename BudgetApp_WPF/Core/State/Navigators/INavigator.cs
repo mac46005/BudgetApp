@@ -11,9 +11,9 @@ namespace BudgetApp_WPF.Core.State.Navigators
     /// <summary>
     /// This bitch does somethin yo...
     /// </summary>
-    public interface INavigator
+    internal interface INavigator<T>
     {
-        BaseViewModel CurrentViewModel { get; set; }
+        BaseViewModel<T> CurrentViewModel { get; set; }
         ICommand UpdateCurrentViewModelICommand { get; }
     }
 }
