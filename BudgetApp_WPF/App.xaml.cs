@@ -1,7 +1,10 @@
 ﻿using Budget_ClassLib.Models;
 using BudgetApp_WPF.Core.Commands;
+using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories;
 using BudgetApp_WPF.MVVM.ViewModels;
+using BudgetApp_WPF.MVVM.ViewModels.NavigationVM;
+using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using BudgetDB_APIAccess_ClassLib.API;
 using BudgetDB_APIAccess_ClassLib.API.Interfaces;
 using Microsoft.Extensions.Configuration;
@@ -44,7 +47,6 @@ namespace BudgetApp_WPF
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
             services.AddScoped<MainViewModel>();
-
             services.AddSingleton<IAPIClient, APIClient>();
 
 
@@ -53,7 +55,8 @@ namespace BudgetApp_WPF
 
 
             // View Factories
-            services.AddTransient<UserDashBoardViewModelFactory>();
+            services.AddTransient<IAbstractViewModelFactory<object, MainMenuOptionsEnum>,MainNavViewModelFactory>();
+            services.AddTransient<IViewModelFactory<UserDashBoardViewModel,User>,UserDashBoardViewModelFactory>();
             //
 
 
@@ -61,7 +64,9 @@ namespace BudgetApp_WPF
 
 
 
-
+            // Navigation
+            services.AddTransient<MainNavigationViewModel>();
+            //
 
 
 

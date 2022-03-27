@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal interface IDashBoardViewModel<T>
+    internal interface IDashBoardViewModel<T> : IViewModel<T>
     {
         ObservableCollection<T> DataCollection { get; set; }
         INavigator<T> Navigator { get; set; }

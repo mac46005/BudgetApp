@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BudgetApp_WPF.Core;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
     {
         public ObservableCollection<T> DataCollection { get; set; }
         public INavigator<T> Navigator { get; set; }
+        public T Model { get; set; }
     }
 }

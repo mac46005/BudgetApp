@@ -10,11 +10,22 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories
 {
-    public class UserDashBoardViewModelFactory : IViewModelFactory<UserDashBoardViewModel, object>
+
+
+
+
+    internal class UserDashBoardViewModelFactory : IViewModelFactory<UserDashBoardViewModel, User>
     {
-        public BaseViewModel<object> CreateViewModel()
+        public UserDashBoardViewModelFactory()
         {
-            throw new NotImplementedException();
+
+        }
+
+
+
+        public IViewModel<User> CreateViewModel()
+        {
+            return new UserDashBoardViewModel();
         }
     }
 }

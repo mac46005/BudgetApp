@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.NavigationVM
 {
-    internal class MainNavigationViewModel : BaseNavigatorViewModel<object,object>
+    internal class MainNavigationViewModel : BaseNavigatorViewModel<object>
     {
         public MainNavigationViewModel(MainNavViewModelFactory mainNavViewModelFactory)
         {
