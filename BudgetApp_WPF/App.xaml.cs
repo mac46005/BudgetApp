@@ -53,7 +53,7 @@ namespace BudgetApp_WPF
 
 
             // View Factories
-            services.AddTransient<UsersViewsFactory>();
+            services.AddTransient<UserDashBoardViewModelFactory>();
             //
 
 

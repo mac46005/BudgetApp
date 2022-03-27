@@ -9,8 +9,9 @@ using System.Windows.Input;
 namespace BudgetApp_WPF.Core.State.Navigators
 {
     /// <summary>
-    /// This bitch does somethin yo...
+    /// Used for navigation views.
     /// </summary>
+    /// <typeparam name="T">T represents the MODEL that the BaseViewModel represents</typeparam>
     internal interface INavigator<T>
     {
         BaseViewModel<T> CurrentViewModel { get; set; }

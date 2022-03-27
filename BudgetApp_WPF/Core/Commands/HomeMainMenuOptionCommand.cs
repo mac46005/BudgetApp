@@ -23,8 +23,10 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
-        INavigator _mainViewModel;
-        UsersViewsFactory _usersViewsFactory;
+        private readonly INavigator<object> _navigator;
+
+        // private readonly factory
+        UserDashBoardViewModelFactory _usersViewsFactory;
 
 
 
@@ -37,6 +39,7 @@ namespace BudgetApp_WPF.Core.Commands
 
         public HomeMainMenuOptionCommand()
         {
+             
         }
 
 

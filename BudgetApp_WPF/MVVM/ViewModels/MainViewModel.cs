@@ -1,6 +1,7 @@
 ﻿using BudgetApp_WPF.Core;
 using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Factories;
+using BudgetApp_WPF.Core.State.Navigators;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,9 +15,9 @@ namespace BudgetApp_WPF.MVVM.ViewModels
     internal class MainViewModel : ObservableObject
     {
 
-        UsersViewsFactory _userViewsFactory;
+        UserDashBoardViewModelFactory _userViewsFactory;
 
-
+        INavigator _navigation;
 
 
 
@@ -36,7 +37,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels
 
 
 
-        public MainViewModel(UsersViewsFactory usersViewsFactory)
+        public MainViewModel(UserDashBoardViewModelFactory usersViewsFactory)
         {
             _userViewsFactory = usersViewsFactory;
         }

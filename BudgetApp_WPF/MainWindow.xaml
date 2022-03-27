@@ -54,7 +54,14 @@
             
             
             <!--Side Nav-->
-            <StackPanel Grid.Column="0"
+            <ContentControl Grid.Column="0" Content="{Binding Navigation}"/>
+            
+            
+            
+            
+            
+            
+            <!--<StackPanel Grid.Column="0"
                         Grid.Row="1">
                 <RadioButton Content="CurrentMonth"
                              Command="{Binding SelectMainMenuOptionCommand}"
@@ -77,7 +84,7 @@
                              Command="{Binding SelectMainMenuOptionCommand}"
                              CommandParameter="{x:Static enums:MainMenuOptionsEnum.User}"
                              />
-            </StackPanel>
+            </StackPanel>-->
 
             <ContentControl Grid.Column="1"
                             Grid.Row="1"
