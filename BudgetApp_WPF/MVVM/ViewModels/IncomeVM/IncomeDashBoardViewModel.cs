@@ -1,11 +1,11 @@
-﻿using BudgetApp_WPF.MVVM.ViewModels.Base;
+﻿using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.MVVM.ViewModels.Income
+namespace BudgetApp_WPF.MVVM.ViewModels.IncomeVM
 {
     internal class IncomeDashBoardViewModel : BaseViewModel<object>
     {

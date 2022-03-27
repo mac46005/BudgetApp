@@ -1,6 +1,6 @@
 ﻿using Budget_ClassLib.Models;
-using BudgetApp_WPF.MVVM.ViewModels.Base;
-using BudgetApp_WPF.MVVM.ViewModels.User;
+using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
+using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using BudgetDB_APIAccess_ClassLib.API.Interfaces;
 using System;
 using System.Collections.Generic;

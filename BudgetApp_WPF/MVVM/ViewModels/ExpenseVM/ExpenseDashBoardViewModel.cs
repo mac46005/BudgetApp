@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.MVVM.ViewModels.Expense
+namespace BudgetApp_WPF.MVVM.ViewModels.ExpenseVM
 {
-    internal class AddEditExpenseViewModel
+    internal class ExpenseDashBoardViewModel
     {
     }
 }

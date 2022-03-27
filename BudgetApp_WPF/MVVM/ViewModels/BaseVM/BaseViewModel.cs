@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.MVVM.ViewModels.Base
+namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
     /// <summary>
     /// 
