@@ -7,6 +7,5 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
     internal class UserDashBoardViewModel : BaseDashBoardViewModel<User>
     {
 
-
     }
 }

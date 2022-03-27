@@ -24,10 +24,7 @@ namespace BudgetApp_WPF.Core.Commands
 
 
         private readonly INavigator<object> _navigator;
-
-        // private readonly factory
-        UserDashBoardViewModelFactory _usersViewsFactory;
-
+        private readonly MainNavViewModelFactory _mainNavVewModelFactory;
 
 
 
@@ -37,9 +34,10 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
-        public HomeMainMenuOptionCommand()
+        public HomeMainMenuOptionCommand(INavigator navigator, MainNavViewModelFactory mainNavViewModelFactory)
         {
-             
+            _navigator = navigator;
+            _mainNavVewModelFactory = mainNavViewModelFactory;
         }
 
 
@@ -66,20 +64,28 @@ namespace BudgetApp_WPF.Core.Commands
                 switch (mainMenuOptions)
                 {
                     case MainMenuOptionsEnum.Current:
+                        _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
                         break;
                     case MainMenuOptionsEnum.Goal:
+                        _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
                         break;
                     case MainMenuOptionsEnum.History:
+                        _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
                         break;
                     case MainMenuOptionsEnum.Income:
+                        _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
                         break;
                     case MainMenuOptionsEnum.Expense:
+                        _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
                         break;
                     case MainMenuOptionsEnum.Category:
+                        _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
                         break;
                     case MainMenuOptionsEnum.User:
+                        _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
                         break;
                     case MainMenuOptionsEnum.Settings:
+                        _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
                         break;
                     default:
                         break;

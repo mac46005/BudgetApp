@@ -10,8 +10,10 @@ namespace BudgetApp_WPF.Core.Factories
 {
     internal class MainNavViewModelFactory : IAbstractViewModelFactory<object, MainMenuOptionsEnum>
     {
+
         public BaseViewModel<object> CreateViewModel(MainMenuOptionsEnum viewType)
         {
+
             switch (viewType)
             {
                 case MainMenuOptionsEnum.Current:
