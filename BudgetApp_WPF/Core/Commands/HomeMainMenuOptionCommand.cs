@@ -1,7 +1,7 @@
 ﻿using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories;
-using BudgetApp_WPF.Core.State.Navigators;
 using BudgetApp_WPF.MVVM.ViewModels;
+using BudgetApp_WPF.MVVM.ViewModels.Base.Navigators;
 using BudgetApp_WPF.MVVM.ViewModels.Category;
 using BudgetApp_WPF.MVVM.ViewModels.Expense;
 using BudgetApp_WPF.MVVM.ViewModels.History;

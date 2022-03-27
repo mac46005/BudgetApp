@@ -1,5 +1,5 @@
 ﻿using BudgetApp_WPF.Core.Enums;
-using BudgetApp_WPF.MVVM.ViewModels;
+using BudgetApp_WPF.MVVM.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;

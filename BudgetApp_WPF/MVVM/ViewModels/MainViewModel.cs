@@ -1,7 +1,6 @@
 ﻿using BudgetApp_WPF.Core;
 using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Factories;
-using BudgetApp_WPF.Core.State.Navigators;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

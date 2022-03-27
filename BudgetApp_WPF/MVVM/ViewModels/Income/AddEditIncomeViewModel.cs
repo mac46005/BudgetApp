@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BudgetApp_WPF.MVVM.ViewModels.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

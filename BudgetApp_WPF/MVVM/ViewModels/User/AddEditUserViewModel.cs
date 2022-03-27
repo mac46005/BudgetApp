@@ -1,4 +1,5 @@
 ﻿using BudgetApp_API.DataAccess.Interfaces;
+using BudgetApp_WPF.MVVM.ViewModels.Base;
 using BudgetDB_APIAccess_ClassLib.API.Interfaces;
 using System;
 using System.Collections.Generic;

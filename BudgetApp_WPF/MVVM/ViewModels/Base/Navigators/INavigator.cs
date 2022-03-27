@@ -1,4 +1,4 @@
-﻿using BudgetApp_WPF.MVVM.ViewModels;
+﻿using BudgetApp_WPF.MVVM.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace BudgetApp_WPF.Core.State.Navigators
+namespace BudgetApp_WPF.MVVM.ViewModels.Base.Navigators
 {
     /// <summary>
     /// Used for navigation views.

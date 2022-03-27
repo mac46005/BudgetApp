@@ -6,12 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using BudgetApp_WPF.Core.State.Navigators;
+using BudgetApp_WPF.MVVM.ViewModels.Base;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.User
 {
-    internal class UserDashBoardViewModel : BaseViewModel<object>
+    internal class UserDashBoardViewModel : BaseViewModel<ObservableCollection<Budget_ClassLib.Models.User>>
     {
         IAPIEndpoint<Budget_ClassLib.Models.User, int> _usersDataEndPoint;
+
+
+
+
         public UserDashBoardViewModel(IAPIEndpoint<Budget_ClassLib.Models.User,int> usersDataEndPoint)
         {
             _usersDataEndPoint = usersDataEndPoint;
