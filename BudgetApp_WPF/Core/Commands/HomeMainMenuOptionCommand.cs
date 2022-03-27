@@ -34,7 +34,7 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
-        public HomeMainMenuOptionCommand(INavigator navigator, MainNavViewModelFactory mainNavViewModelFactory)
+        public HomeMainMenuOptionCommand(INavigator<object> navigator, MainNavViewModelFactory mainNavViewModelFactory)
         {
             _navigator = navigator;
             _mainNavVewModelFactory = mainNavViewModelFactory;

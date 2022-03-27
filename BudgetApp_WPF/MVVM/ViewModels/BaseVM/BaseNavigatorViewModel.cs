@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal class BaseNavigatorViewModel<T, U> : BaseViewModel<U>, INavigator<T>
+    internal class BaseNavigatorViewModel<T, U> : INavigator<T>
     {
         public BaseViewModel<T> CurrentViewModel { get; set; }
 
