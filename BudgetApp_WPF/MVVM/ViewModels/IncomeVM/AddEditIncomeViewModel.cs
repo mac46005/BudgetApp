@@ -1,4 +1,5 @@
-﻿using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
+﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.IncomeVM
 {
-    internal class AddEditIncomeViewModel : BaseViewModel
+    internal class AddEditIncomeViewModel : BaseViewModel<IncomeItem>
     {
     }
 }

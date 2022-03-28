@@ -11,8 +11,9 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
     /// <summary>
     /// 
     /// </summary>
-    internal class BaseViewModel : IViewModel
+    internal class BaseViewModel<T> : IViewModel<T>
     {
+        public T Model { get; set; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

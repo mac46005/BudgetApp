@@ -8,11 +8,13 @@ using System.Windows.Input;
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
     /// <summary>
-    /// Used for navigation views.
+    /// The INavigator controls the selection of view models.
+    /// The ICommand is used to determine the selection of view models.
     /// </summary>
-    internal interface INavigator : IViewModel
+    /// <typeparam name="T">A model class the represents this view model</typeparam>
+    internal interface INavigator<T> : IViewModel<T>
     {
-        IViewModel CurrentViewModel { get; set; }
+        IViewModel<T> CurrentViewModel { get; set; }
         ICommand UpdateCurrentViewModelICommand { get; }
     }
 }

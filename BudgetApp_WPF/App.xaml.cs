@@ -54,7 +54,7 @@ namespace BudgetApp_WPF
 
 
             // View Factories
-            services.AddTransient<IViewModelFactory, UserDashBoardViewModelFactory>();
+            services.AddTransient<IViewModelFactory, UserDBVMFactory>();
             services.AddTransient<IViewModelFactory, CurrentMonthDBVMFactory>();
             services.AddTransient<IAbstractViewModelFactory<MainMenuOptionsEnum>, MainVM_Navigation_AbstractFactory>();
             //

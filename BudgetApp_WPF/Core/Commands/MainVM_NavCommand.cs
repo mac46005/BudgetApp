@@ -29,7 +29,7 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
-        public MainVM_NavCommand(INavigator navigator, IAbstractViewModelFactory<MainMenuOptionsEnum> mainNavViewModelFactory)
+        public MainVM_NavCommand(IDashBoardViewModel<object> navigator, IAbstractViewModelFactory<MainMenuOptionsEnum> mainNavViewModelFactory)
         {
             _navigator = navigator;
             _mainNavVewModelFactory = mainNavViewModelFactory;

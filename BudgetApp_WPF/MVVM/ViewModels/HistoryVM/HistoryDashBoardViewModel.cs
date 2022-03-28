@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.HistoryVM
 {
-    internal class HistoryDashBoardViewModel : BaseViewModel
+    internal class HistoryDashBoardViewModel : BaseViewModel<object>
     {
     }
 }

@@ -13,45 +13,16 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels
 {
-    internal class MainViewModel : ObservableObject, IDashBoardViewModel<object>
+    internal class MainViewModel : ObservableObject
     {
-
-
-
-
-
-
-        private object _currentViewMode = new CurrentMonthViewModel();
-        public object CurrentViewModel 
-        {
-            get { return _currentViewMode; }
-            set 
-            {
-                _currentViewMode = value;
-                OnPropertyChanged("CurrentViewModel");
-            }
-        }
-
-
-
-
-
-
-
         public ObservableCollection<object> DataCollection { get; set; }
-        public INavigator Navigator { get; set; }
+        public INavigator<object> Navigator { get; set; }
 
 
 
         public MainViewModel(MainVM_NavigationViewModel mainNavigationViewModel)
         {
             Navigator = mainNavigationViewModel;
-        }
-
-
-
-        public void LoadData()
-        {
         }
     }
 }

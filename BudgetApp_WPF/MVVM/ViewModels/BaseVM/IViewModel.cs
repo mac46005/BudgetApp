@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal interface IViewModel : IObservableObject
+    /// <summary>
+    /// Base View Model class. Also implements IObservableObject
+    /// </summary>
+    /// <typeparam name="T">The model class that represents this ViewModel</typeparam>
+    internal interface IViewModel<T> : IObservableObject
     {
-
+        T Model { get; set; }
     }
 }

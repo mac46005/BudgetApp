@@ -12,10 +12,6 @@
         Width="960">
     <Grid>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
@@ -54,43 +50,8 @@
             
             
             <!--Side Nav-->
-            <ContentControl Grid.Column="0" 
-                            Grid.Row="1" 
+            <ContentControl Grid.Row="1" 
                             Content="{Binding Navigator}"/>
-            
-            
-            
-            
-            
-            
-            <!--<StackPanel Grid.Column="0"
-                        Grid.Row="1">
-                <RadioButton Content="CurrentMonth"
-                             Command="{Binding SelectMainMenuOptionCommand}"
-                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Current}"/>
-                <RadioButton Content="Goal"
-                             />
-                <RadioButton Content="History"
-                             Command="{Binding SelectMainMenuOptionCommand}"
-                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.History}"/>
-                <RadioButton Content="Income"
-                             Command="{Binding SelectMainMenuOptionCommand}"
-                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Income}"/>
-                <RadioButton Content="Expense"
-                             Command="{Binding SelectMainMenuOptionCommand}"
-                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Expense}"/>
-                <RadioButton Content="Manage Category"
-                             Command="{Binding SelectMainMenuOptionCommand}"
-                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Category}"/>
-                <RadioButton Content="Manage User"
-                             Command="{Binding SelectMainMenuOptionCommand}"
-                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.User}"
-                             />
-            </StackPanel>-->
-
-            <ContentControl Grid.Column="1"
-                            Grid.Row="1"
-                            Content="{Binding CurrentViewModel}"/>
         </Grid>
     </Grid>
 </Window>

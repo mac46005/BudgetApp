@@ -6,26 +6,28 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
     internal class BaseDashBoardViewModel<T> : IDashBoardViewModel<T>
     {
         public ObservableCollection<T> DataCollection { get; set; }
-        public INavigator Navigator { get; set; }
+        public IViewModel<T> CurrentViewModel { get; set; }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public ICommand UpdateCurrentViewModelICommand { get; set; }
+
+        public T Model { get; set; }
 
 
 
-        /// <summary>
-        /// Load data from external source
-        /// </summary>
         public virtual void LoadData()
         {
-
+            // Load external data
         }
 
+
+        public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged(string propName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));

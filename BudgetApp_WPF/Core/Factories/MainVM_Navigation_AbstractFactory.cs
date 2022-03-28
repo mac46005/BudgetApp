@@ -42,6 +42,7 @@ namespace BudgetApp_WPF.Core.Factories
             switch (viewType)
             {
                 case MainMenuOptionsEnum.Current:
+                    viewModel = _currentMonthVMFactory.CreateViewModel();
                     break;
                 case MainMenuOptionsEnum.Goal:
                     break;
