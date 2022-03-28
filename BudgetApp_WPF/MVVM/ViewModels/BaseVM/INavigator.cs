@@ -10,10 +10,9 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
     /// <summary>
     /// Used for navigation views.
     /// </summary>
-    /// <typeparam name="T">T represents the MODEL that the BaseViewModel represents</typeparam>
-    internal interface INavigator<T> : IViewModel<T>
+    internal interface INavigator : IViewModel
     {
-        IViewModel<T> CurrentViewModel { get; set; }
+        IViewModel CurrentViewModel { get; set; }
         ICommand UpdateCurrentViewModelICommand { get; }
     }
 }

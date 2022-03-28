@@ -12,7 +12,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.NavigationVM
 {
     internal class MainVM_NavigationViewModel : BaseNavigatorViewModel<object>
     {
-        public MainVM_NavigationViewModel(IAbstractViewModelFactory<object, MainMenuOptionsEnum> mainNavViewModelFactory)
+        public MainVM_NavigationViewModel(IAbstractViewModelFactory<MainMenuOptionsEnum> mainNavViewModelFactory)
         {
             UpdateCurrentViewModelICommand = new MainVM_NavCommand(this, mainNavViewModelFactory);
         }

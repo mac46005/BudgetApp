@@ -18,8 +18,8 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
-        private readonly INavigator<object> _navigator;
-        private readonly IAbstractViewModelFactory<object, MainMenuOptionsEnum> _mainNavVewModelFactory;
+        private readonly INavigator _navigator;
+        private readonly IAbstractViewModelFactory<MainMenuOptionsEnum> _mainNavVewModelFactory;
 
 
 
@@ -29,7 +29,7 @@ namespace BudgetApp_WPF.Core.Commands
 
 
 
-        public MainVM_NavCommand(INavigator<object> navigator, IAbstractViewModelFactory<object, MainMenuOptionsEnum> mainNavViewModelFactory)
+        public MainVM_NavCommand(INavigator navigator, IAbstractViewModelFactory<MainMenuOptionsEnum> mainNavViewModelFactory)
         {
             _navigator = navigator;
             _mainNavVewModelFactory = mainNavViewModelFactory;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels
 {
-    internal class CurrentMonthViewModel : BaseViewModel<object>
+    internal class CurrentMonthViewModel : BaseViewModel
     {
     }
 }

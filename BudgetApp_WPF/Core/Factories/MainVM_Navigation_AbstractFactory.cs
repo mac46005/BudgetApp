@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories
 {
-    internal class MainVM_Navigation_AbstractFactory : IAbstractViewModelFactory<object, MainMenuOptionsEnum>
+    internal class MainVM_Navigation_AbstractFactory : IAbstractViewModelFactory<MainMenuOptionsEnum>
     {
-        IViewModelFactory<UserDashBoardViewModel, User> _userDashboardVMF;
+        IViewModelFactory _currentMonthVMFactory;
+        IViewModelFactory _userDashboardVMF;
 
 
 
@@ -21,9 +22,11 @@ namespace BudgetApp_WPF.Core.Factories
 
         public MainVM_Navigation_AbstractFactory
             (
-            IViewModelFactory<UserDashBoardViewModel, User> userDashBoardVMF
+            IViewModelFactory currentMonthVMFactory,
+            IViewModelFactory userDashBoardVMF
             )
         {
+            _currentMonthVMFactory = currentMonthVMFactory;
             _userDashboardVMF = userDashBoardVMF;
         }
 
@@ -33,9 +36,9 @@ namespace BudgetApp_WPF.Core.Factories
 
 
 
-        public IViewModel<object> CreateViewModel(MainMenuOptionsEnum viewType)
+        public IViewModel CreateViewModel(MainMenuOptionsEnum viewType)
         {
-            IViewModel<object> viewModel = (IViewModel<object>)_userDashboardVMF.CreateViewModel();
+            var viewModel = _userDashboardVMF.CreateViewModel();
             switch (viewType)
             {
                 case MainMenuOptionsEnum.Current:
@@ -51,7 +54,7 @@ namespace BudgetApp_WPF.Core.Factories
                 case MainMenuOptionsEnum.Category:
                     break;
                 case MainMenuOptionsEnum.User:
-                    viewModel = (IViewModel<object>)_userDashboardVMF.CreateViewModel();
+                    viewModel = _userDashboardVMF.CreateViewModel();
                     break;
                 case MainMenuOptionsEnum.Settings:
                     break;

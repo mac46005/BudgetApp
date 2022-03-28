@@ -11,9 +11,8 @@ namespace BudgetApp_WPF.Core.Factories
     /// The main factory resposible for producing the viewModel classes
     /// </summary>
     /// <typeparam name="T">BaseViewModel-T-</typeparam>
-    /// <typeparam name="U">The parameter that will decide on the view to produce</typeparam>
-    internal interface IAbstractViewModelFactory<T,U>
+    internal interface IAbstractViewModelFactory<T>
     {
-        IViewModel<T> CreateViewModel(U viewType);
+        IViewModel CreateViewModel(T viewType);
     }
 }

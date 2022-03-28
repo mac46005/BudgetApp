@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.CategoryVM
 {
-    internal class CategoryDashBoardViewModel : BaseViewModel<object>
+    internal class CategoryDashBoardViewModel : BaseViewModel
     {
     }
 }

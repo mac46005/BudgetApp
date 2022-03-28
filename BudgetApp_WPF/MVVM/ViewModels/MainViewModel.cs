@@ -39,8 +39,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels
 
 
         public ObservableCollection<object> DataCollection { get; set; }
-        public INavigator<object> Navigator { get; set; }
-        public object Model { get; set; }
+        public INavigator Navigator { get; set; }
 
 
 
