@@ -11,8 +11,8 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
     internal class BaseNavigatorViewModel<T> : INavigator<T>
     {
-        private IViewModel<T> _currentViewModel;
-        public IViewModel<T> CurrentViewModel{
+        private object _currentViewModel;
+        public object ViewModel{
             get
             {
                 return _currentViewModel;
@@ -25,7 +25,23 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
             }
         }
         public ICommand UpdateCurrentViewModelICommand { get; set; }
+
+
+
+
+
+
+
+
         public T Model { get; set; }
+
+
+
+
+
+
+
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

@@ -14,7 +14,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
     /// <typeparam name="T">A model class the represents this view model</typeparam>
     internal interface INavigator<T> : IViewModel<T>
     {
-        IViewModel<T> CurrentViewModel { get; set; }
+        object ViewModel { get; set; }
         ICommand UpdateCurrentViewModelICommand { get; }
     }
 }

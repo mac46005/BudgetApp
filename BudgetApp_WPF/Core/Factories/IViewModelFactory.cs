@@ -13,10 +13,7 @@ namespace BudgetApp_WPF.Core.Factories
     /// <typeparam name="T">Represents the model for the ViewModel being created</typeparam>
     internal interface IViewModelFactory<T>
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>A View Model</returns>
-        IViewModel<T> CreateViewModel();
+        
+        object CreateViewModel();
     }
 }

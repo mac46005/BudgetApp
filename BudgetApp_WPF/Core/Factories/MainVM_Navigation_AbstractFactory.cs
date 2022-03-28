@@ -31,12 +31,6 @@ namespace BudgetApp_WPF.Core.Factories
             _userDashboardVMF = userDashBoardVMF;
         }
 
-
-
-
-
-
-
         public object CreateViewModel(MainMenuOptionsEnum viewType)
         {
             switch (viewType)
@@ -44,25 +38,22 @@ namespace BudgetApp_WPF.Core.Factories
                 case MainMenuOptionsEnum.Current:
                     return _currentMonthVMFactory.CreateViewModel();
                 case MainMenuOptionsEnum.Goal:
-                    throw new NotImplementedException();
+                    return _currentMonthVMFactory.CreateViewModel();
                 case MainMenuOptionsEnum.History:
-                    throw new NotImplementedException();
+                    return _currentMonthVMFactory.CreateViewModel();
                 case MainMenuOptionsEnum.Income:
-                    throw new NotImplementedException();
+                    return _currentMonthVMFactory.CreateViewModel();
                 case MainMenuOptionsEnum.Expense:
-                    throw new NotImplementedException();
+                    return _currentMonthVMFactory.CreateViewModel();
                 case MainMenuOptionsEnum.Category:
-                    throw new NotImplementedException();
+                    return _currentMonthVMFactory.CreateViewModel();
                 case MainMenuOptionsEnum.User:
                     return _userDashboardVMF.CreateViewModel();
-                    throw new NotImplementedException();
                 case MainMenuOptionsEnum.Settings:
-                    throw new NotImplementedException();
+                    return _currentMonthVMFactory.CreateViewModel();
                 default:
                     return _currentMonthVMFactory.CreateViewModel();
-
             }
-
         }
     }
 }

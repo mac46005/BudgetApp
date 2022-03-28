@@ -15,7 +15,7 @@ namespace BudgetApp_WPF.Core.Factories
         {
 
         }
-        public IViewModel<ObservableCollection<ObservableCollection<object>>> CreateViewModel()
+        public object CreateViewModel()
         {
             return new CurrentMonthViewModel();
         }

@@ -21,22 +21,11 @@ namespace BudgetApp_WPF.Core.Commands
         private readonly INavigator<object> _navigator;
         private readonly IAbstractViewModelFactory<MainMenuOptionsEnum> _mainNavVewModelFactory;
 
-
-
-        ///
-
-
-
-
-
         public MainVM_NavCommand(INavigator<object> navigator, IAbstractViewModelFactory<MainMenuOptionsEnum> mainNavViewModelFactory)
         {
             _navigator = navigator;
             _mainNavVewModelFactory = mainNavViewModelFactory;
         }
-
-
-
 
 
 
@@ -56,7 +45,7 @@ namespace BudgetApp_WPF.Core.Commands
             if (parameter is MainMenuOptionsEnum)
             {
                 MainMenuOptionsEnum mainMenuOptions = (MainMenuOptionsEnum)parameter;
-                _navigator.CurrentViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
+                _navigator.ViewModel = _mainNavVewModelFactory.CreateViewModel(mainMenuOptions);
             }
 
         }

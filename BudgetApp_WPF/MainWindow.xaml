@@ -16,7 +16,10 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
             <!--Top Border-->
             <Border Grid.ColumnSpan="2"
                     HorizontalAlignment="Stretch"
@@ -44,14 +47,37 @@
                     </StackPanel>
                 </Grid>
             </Border>
-            
-            
-            
-            
-            
-            <!--Side Nav-->
-            <ContentControl Grid.Row="1" 
-                            Content="{Binding Navigator}"/>
+
+
+
+            <StackPanel Grid.Column="0"
+                        Grid.Row="1">
+                <RadioButton Content="CurrentMonth"
+                             Command="{Binding UpdateCurrentViewModelICommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Current}"/>
+                <RadioButton Content="Goal"
+                             />
+                <RadioButton Content="History"
+                             Command="{Binding UpdateCurrentViewModelICommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.History}"/>
+                <RadioButton Content="Income"
+                             Command="{Binding UpdateCurrentViewModelICommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Income}"/>
+                <RadioButton Content="Expense"
+                             Command="{Binding UpdateCurrentViewModelICommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Expense}"/>
+                <RadioButton Content="Manage Category"
+                             Command="{Binding UpdateCurrentViewModelICommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.Category}"/>
+                <RadioButton Content="Manage User"
+                             Command="{Binding UpdateCurrentViewModelICommand}"
+                             CommandParameter="{x:Static enums:MainMenuOptionsEnum.User}"
+                             />
+            </StackPanel>
+            <ContentControl Grid.Column="1"
+                            Grid.Row="1"
+                        Content="{Binding ViewModel}"/>
+
         </Grid>
     </Grid>
 </Window>

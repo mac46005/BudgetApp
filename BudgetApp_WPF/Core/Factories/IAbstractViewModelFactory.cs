@@ -10,9 +10,10 @@ namespace BudgetApp_WPF.Core.Factories
     /// <summary>
     /// The main factory resposible for producing the viewModel classes
     /// </summary>
-    /// <typeparam name="T">BaseViewModel-T-</typeparam>
+    /// <typeparam name="T">Used for defining an action depending on what is passed</typeparam>
     internal interface IAbstractViewModelFactory<T>
     {
+
         object CreateViewModel(T viewType);
     }
 }

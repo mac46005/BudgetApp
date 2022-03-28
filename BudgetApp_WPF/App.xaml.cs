@@ -3,6 +3,7 @@ using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories;
 using BudgetApp_WPF.MVVM.ViewModels;
+using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using BudgetApp_WPF.MVVM.ViewModels.NavigationVM;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using BudgetDB_APIAccess_ClassLib.API;
@@ -61,7 +62,7 @@ namespace BudgetApp_WPF
             //
 
             // Navigation
-            services.AddTransient<MainVM_NavigationViewModel>();
+            services.AddTransient<INavigator<object>,MainVM_NavigationViewModel>();
             //
 
             // Commands

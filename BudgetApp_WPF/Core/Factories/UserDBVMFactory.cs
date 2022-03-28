@@ -24,7 +24,7 @@ namespace BudgetApp_WPF.Core.Factories
 
 
 
-        public IViewModel<User> CreateViewModel()
+        public object CreateViewModel()
         {
             return new UserDashBoardViewModel(_usersDataEndPoint);
         }
