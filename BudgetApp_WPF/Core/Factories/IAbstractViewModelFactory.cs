@@ -13,6 +13,6 @@ namespace BudgetApp_WPF.Core.Factories
     /// <typeparam name="T">BaseViewModel-T-</typeparam>
     internal interface IAbstractViewModelFactory<T>
     {
-        IViewModel CreateViewModel(T viewType);
+        object CreateViewModel(T viewType);
     }
 }

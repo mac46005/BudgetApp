@@ -14,7 +14,7 @@ namespace BudgetApp_WPF.Core.Factories
 
 
 
-    internal class UserDBVMFactory : IViewModelFactory
+    internal class UserDBVMFactory : IViewModelFactory<User>
     {
         IAPIEndpoint<User,int> _usersDataEndPoint;
         public UserDBVMFactory(IAPIEndpoint<User,int> usersDataEndPoint)
@@ -24,7 +24,7 @@ namespace BudgetApp_WPF.Core.Factories
 
 
 
-        public IViewModel CreateViewModel()
+        public IViewModel<User> CreateViewModel()
         {
             return new UserDashBoardViewModel(_usersDataEndPoint);
         }

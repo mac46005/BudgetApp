@@ -4,6 +4,7 @@ using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,8 @@ namespace BudgetApp_WPF.Core.Factories
 {
     internal class MainVM_Navigation_AbstractFactory : IAbstractViewModelFactory<MainMenuOptionsEnum>
     {
-        IViewModelFactory _currentMonthVMFactory;
-        IViewModelFactory _userDashboardVMF;
+        IViewModelFactory<ObservableCollection<ObservableCollection<object>>> _currentMonthVMFactory;
+        IViewModelFactory<User> _userDashboardVMF;
 
 
 
@@ -22,8 +23,8 @@ namespace BudgetApp_WPF.Core.Factories
 
         public MainVM_Navigation_AbstractFactory
             (
-            IViewModelFactory currentMonthVMFactory,
-            IViewModelFactory userDashBoardVMF
+            IViewModelFactory<ObservableCollection<ObservableCollection<object>>> currentMonthVMFactory,
+            IViewModelFactory<User> userDashBoardVMF
             )
         {
             _currentMonthVMFactory = currentMonthVMFactory;
@@ -36,34 +37,32 @@ namespace BudgetApp_WPF.Core.Factories
 
 
 
-        public IViewModel CreateViewModel(MainMenuOptionsEnum viewType)
+        public object CreateViewModel(MainMenuOptionsEnum viewType)
         {
-            var viewModel = _userDashboardVMF.CreateViewModel();
             switch (viewType)
             {
                 case MainMenuOptionsEnum.Current:
-                    viewModel = _currentMonthVMFactory.CreateViewModel();
-                    break;
+                    return _currentMonthVMFactory.CreateViewModel();
                 case MainMenuOptionsEnum.Goal:
-                    break;
+                    throw new NotImplementedException();
                 case MainMenuOptionsEnum.History:
-                    break;
+                    throw new NotImplementedException();
                 case MainMenuOptionsEnum.Income:
-                    break;
+                    throw new NotImplementedException();
                 case MainMenuOptionsEnum.Expense:
-                    break;
+                    throw new NotImplementedException();
                 case MainMenuOptionsEnum.Category:
-                    break;
+                    throw new NotImplementedException();
                 case MainMenuOptionsEnum.User:
-                    viewModel = _userDashboardVMF.CreateViewModel();
-                    break;
+                    return _userDashboardVMF.CreateViewModel();
+                    throw new NotImplementedException();
                 case MainMenuOptionsEnum.Settings:
-                    break;
+                    throw new NotImplementedException();
                 default:
-                    break;
+                    return _currentMonthVMFactory.CreateViewModel();
+
             }
 
-            return viewModel;
         }
     }
 }

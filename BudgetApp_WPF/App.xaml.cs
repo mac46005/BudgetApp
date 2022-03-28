@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -54,8 +55,8 @@ namespace BudgetApp_WPF
 
 
             // View Factories
-            services.AddTransient<IViewModelFactory, UserDBVMFactory>();
-            services.AddTransient<IViewModelFactory, CurrentMonthDBVMFactory>();
+            services.AddTransient<IViewModelFactory<User>, UserDBVMFactory>();
+            services.AddTransient<IViewModelFactory<ObservableCollection<ObservableCollection<object>>>, CurrentMonthDBVMFactory>();
             services.AddTransient<IAbstractViewModelFactory<MainMenuOptionsEnum>, MainVM_Navigation_AbstractFactory>();
             //
 

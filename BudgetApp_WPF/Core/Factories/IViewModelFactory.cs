@@ -8,12 +8,15 @@ using System.Threading.Tasks;
 namespace BudgetApp_WPF.Core.Factories
 {
     /// <summary>
-    /// Creates a single view model class
+    /// Creates a viewmodel-T-. T represents the model that represents the ViewModel
     /// </summary>
-    /// <typeparam name="T">A class that inherets a BaseViewModel</typeparam>
-    /// <typeparam name="U">Is the BaseViewModels model type</typeparam>
-    internal interface IViewModelFactory
+    /// <typeparam name="T">Represents the model for the ViewModel being created</typeparam>
+    internal interface IViewModelFactory<T>
     {
-        IViewModel CreateViewModel();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>A View Model</returns>
+        IViewModel<T> CreateViewModel();
     }
 }
