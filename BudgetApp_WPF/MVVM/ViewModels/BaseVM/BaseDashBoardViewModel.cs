@@ -13,5 +13,15 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         public ObservableCollection<T> DataCollection { get; set; }
         public INavigator<T> Navigator { get; set; }
         public T Model { get; set; }
+
+
+
+        /// <summary>
+        /// Load data from external source
+        /// </summary>
+        public virtual void LoadData()
+        {
+
+        }
     }
 }

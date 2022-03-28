@@ -47,7 +47,7 @@ namespace BudgetApp_WPF
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
             services.AddScoped<MainViewModel>();
-            services.AddSingleton<IAPIClient, APIClient>();
+            
 
 
 
@@ -86,6 +86,7 @@ namespace BudgetApp_WPF
             // NOTE: Test connection out ONLY
             // Later the classe in the list will
             // Depending on the needs...
+            services.AddSingleton<IAPIClient, APIClient>();
             services.AddTransient<IAPIEndpoint<User, int>, UsersDataEndpoint>();
 
 

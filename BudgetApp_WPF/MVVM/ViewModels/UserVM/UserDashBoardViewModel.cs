@@ -7,5 +7,21 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
     internal class UserDashBoardViewModel : BaseDashBoardViewModel<User>
     {
 
+        IAPIEndpoint<User, int> _userDataEndPoint;
+        public UserDashBoardViewModel(IAPIEndpoint<User, int> usersDataEndPoint)
+        {
+
+        }
+
+
+
+
+
+
+
+        public override void LoadData()
+        {
+            
+        }
     }
 }
