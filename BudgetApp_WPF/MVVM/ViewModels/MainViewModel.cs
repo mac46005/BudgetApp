@@ -42,10 +42,17 @@ namespace BudgetApp_WPF.MVVM.ViewModels
         public INavigator<object> Navigator { get; set; }
         public object Model { get; set; }
 
-        public MainViewModel(MainNavigationViewModel mainNavigationViewModel)
+
+
+        public MainViewModel(MainVM_NavigationViewModel mainNavigationViewModel)
         {
             Navigator = mainNavigationViewModel;
         }
 
+
+
+        public void LoadData()
+        {
+        }
     }
 }

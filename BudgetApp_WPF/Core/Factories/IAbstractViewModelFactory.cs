@@ -14,6 +14,6 @@ namespace BudgetApp_WPF.Core.Factories
     /// <typeparam name="U">The parameter that will decide on the view to produce</typeparam>
     internal interface IAbstractViewModelFactory<T,U>
     {
-        BaseViewModel<T> CreateViewModel(U viewType);
+        IViewModel<T> CreateViewModel(U viewType);
     }
 }

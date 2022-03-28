@@ -27,7 +27,7 @@ namespace BudgetApp_WPF
 
         IServiceProvider serviceProvider;
         IConfiguration Configuration { get; set; }
-        
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
@@ -42,35 +42,25 @@ namespace BudgetApp_WPF
         private IServiceProvider CreateServiceProvider()
         {
             IServiceCollection services = new ServiceCollection();
-            
-
             services.AddSingleton<IConfiguration>(Configuration);
-            services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
-            services.AddScoped<MainViewModel>();
-            
 
-
+            // NOTE: Test connection out ONLY
+            // Later the classe in the list will
+            // Depending on the needs...
+            services.AddSingleton<IAPIClient, APIClient>();
+            services.AddTransient<IAPIEndpoint<User, int>, UsersDataEndpoint>();
 
 
 
 
             // View Factories
-            services.AddTransient<IAbstractViewModelFactory<object, MainMenuOptionsEnum>,MainNavViewModelFactory>();
-            services.AddTransient<IViewModelFactory<UserDashBoardViewModel,User>,UserDashBoardViewModelFactory>();
+            services.AddTransient<IViewModelFactory<UserDashBoardViewModel, User>, UserDashBoardViewModelFactory>();
+            services.AddTransient<IAbstractViewModelFactory<object, MainMenuOptionsEnum>, MainVM_Navigation_AbstractFactory>();
             //
-
-
-
-
-
 
             // Navigation
-            services.AddTransient<MainNavigationViewModel>();
+            services.AddTransient<MainVM_NavigationViewModel>();
             //
-
-
-
-
 
             // Commands
             //
@@ -83,12 +73,9 @@ namespace BudgetApp_WPF
 
 
 
-            // NOTE: Test connection out ONLY
-            // Later the classe in the list will
-            // Depending on the needs...
-            services.AddSingleton<IAPIClient, APIClient>();
-            services.AddTransient<IAPIEndpoint<User, int>, UsersDataEndpoint>();
+            services.AddScoped<MainViewModel>();
 
+            services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
 
             return services.BuildServiceProvider();
         }

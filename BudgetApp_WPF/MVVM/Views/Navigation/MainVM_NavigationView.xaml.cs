@@ -18,9 +18,9 @@ namespace BudgetApp_WPF.MVVM.Views.Navigation
     /// <summary>
     /// Interaction logic for MainNavigation.xaml
     /// </summary>
-    public partial class MainNavigationView : UserControl
+    public partial class MainVM_NavigationView : UserControl
     {
-        public MainNavigationView()
+        public MainVM_NavigationView()
         {
             InitializeComponent();
         }

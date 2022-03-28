@@ -10,7 +10,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
     internal class BaseNavigatorViewModel<T> : ObservableObject, INavigator<T>
     {
-        public BaseViewModel<T> CurrentViewModel { get; set; }
+        public IViewModel<T> CurrentViewModel { get; set; }
         public ICommand UpdateCurrentViewModelICommand { get; set; }
         public T Model { get; set; }
     }

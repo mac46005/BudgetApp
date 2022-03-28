@@ -1,42 +1,66 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:view="clr-namespace:BudgetApp_WPF.MVVM.Views"
-                    xmlns:viewmodel="clr-namespace:BudgetApp_WPF.MVVM.ViewModels"
-                    xmlns:categoryview="clr-namespace:BudgetApp_WPF.MVVM.Views.Category"
-                    xmlns:categoryviewmodel="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.Category"
-                    xmlns:expenseview="clr-namespace:BudgetApp_WPF.MVVM.Views.Expense"
-                    xmlns:expenseviewmodel="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.Expense"
-                    xmlns:historyview="clr-namespace:BudgetApp_WPF.MVVM.Views.History"
-                    xmlns:historyviewmodel="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.History"
-                    xmlns:incomeview="clr-namespace:BudgetApp_WPF.MVVM.Views.Income"
-                    xmlns:incomeviewmodel="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.Income"
-                    xmlns:userview="clr-namespace:BudgetApp_WPF.MVVM.Views.User"
-                    xmlns:userviewmodel="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.User">
-    <DataTemplate DataType="{x:Type viewmodel:CurrentMonthViewModel}">
-        <view:CurrentMonthView/>
-    </DataTemplate>
+                    
+                    xmlns:viewM="clr-namespace:BudgetApp_WPF.MVVM.ViewModels"
+                    xmlns:views="clr-namespace:BudgetApp_WPF.MVVM.Views"
+                    
+                    xmlns:navVM="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.NavigationVM"
+                    xmlns:navV="clr-namespace:BudgetApp_WPF.MVVM.Views.Navigation"
+                    
+                    xmlns:categoryVM="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.CategoryVM"
+                    xmlns:categoryV="clr-namespace:BudgetApp_WPF.MVVM.Views.Category"
+                    
+                    xmlns:expenseVM="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.ExpenseVM"
+                    xmlns:expenseV="clr-namespace:BudgetApp_WPF.MVVM.Views.Expense"
+                    
+                    xmlns:historyVM="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.HistoryVM"
+                    xmlns:historyV="clr-namespace:BudgetApp_WPF.MVVM.Views.History"
+                    
+                    xmlns:incomeVM="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.IncomeVM"
+                    xmlns:incomeV="clr-namespace:BudgetApp_WPF.MVVM.Views.Income"
+                    
+                    xmlns:userVM="clr-namespace:BudgetApp_WPF.MVVM.ViewModels.UserVM"
+                    xmlns:userV="clr-namespace:BudgetApp_WPF.MVVM.Views.User"
+                    >
     
-    <DataTemplate DataType="{x:Type categoryviewmodel:CategoryDashBoardViewModel}">
-        <categoryview:CategoryDashboardView/>
+    <!--START NAVIGATION-->
+    <DataTemplate DataType="{x:Type navVM:MainVM_NavigationViewModel}">
+        <navV:MainVM_NavigationView/>
+    </DataTemplate>
+    <!--END NAVIGATION-->
+    
+    <!--START DASHBOARD-->
+    
+    <DataTemplate DataType="{x:Type viewM:CurrentMonthViewModel}">
+        <views:CurrentMonthView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type expenseviewmodel:ExpenseDashBoardViewModel}">
-        <expenseview:ExpenseDashBoardView/>
+
+    <DataTemplate DataType="{x:Type categoryVM:CategoryDashBoardViewModel}">
+        <categoryV:CategoryDashboardView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type historyviewmodel:HistoryDashBoardViewModel}">
-        <historyview:HistoryDashBoardView/>
+
+    <DataTemplate DataType="{x:Type expenseVM:ExpenseDashBoardViewModel}">
+        <expenseV:ExpenseDashBoardView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type incomeviewmodel:IncomeDashBoardViewModel}">
-        <incomeview:IncomeDashBoardView/>
+
+
+    <DataTemplate DataType="{x:Type historyVM:HistoryDashBoardViewModel}">
+        <historyV:HistoryDashBoardView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type userviewmodel:UserDashBoardViewModel}">
-        <userview:UserDashBoardView/>
+
+
+    <DataTemplate DataType="{x:Type incomeVM:IncomeDashBoardViewModel}">
+        <incomeV:IncomeDashBoardView/>
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type userVM:UserDashBoardViewModel}">
+        <userV:UserDashBoardView/>
     </DataTemplate>
     
-    
-    
-    
+    <!--END DASHBOARD -->
 </ResourceDictionary>
