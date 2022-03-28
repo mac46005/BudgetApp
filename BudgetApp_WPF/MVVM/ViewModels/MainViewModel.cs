@@ -17,12 +17,25 @@ namespace BudgetApp_WPF.MVVM.ViewModels
 {
     internal class MainViewModel : IDashBoardViewModel<object>
     {
+
+
+
+
         public MainViewModel(IAbstractViewModelFactory<MainMenuOptionsEnum> mainNavViewModelFactory)
         {
             UpdateCurrentViewModelICommand = new MainVM_NavCommand(this, mainNavViewModelFactory);
         }
 
+
+
+
+
+
         public ObservableCollection<object> DataCollection { get; set; }
+
+
+
+
 
 
         private object _viewModel;
