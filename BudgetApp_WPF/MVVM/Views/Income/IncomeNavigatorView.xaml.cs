@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BudgetApp_WPF.MVVM.Views.User
+namespace BudgetApp_WPF.MVVM.Views.Income
 {
     /// <summary>
-    /// Interaction logic for UserDashBoardView.xaml
+    /// Interaction logic for IncomeDashBoardView.xaml
     /// </summary>
-    public partial class UserDashBoardView : UserControl
+    public partial class IncomeNavigatorView : UserControl
     {
-        public UserDashBoardView()
+        public IncomeNavigatorView()
         {
             InitializeComponent();
         }

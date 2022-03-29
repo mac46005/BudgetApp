@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.ExpenseViewsFactory
 {
-    internal class ExpenseDBVMFactory : IViewModelFactory<ExpenseItem>
+    internal class ExpenseNavigatorVMFactory : IViewModelFactory<ExpenseItem>
     {
-        public ExpenseDBVMFactory()
+        public ExpenseNavigatorVMFactory()
         {
 
         }
         public object CreateViewModel()
         {
-            return new ExpenseDashBoardViewModel();
+            return new ExpenseNavigatorViewModel();
         }
     }
 }

@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.CategoryViewsFactory
 {
-    internal class CategoryDBVMFactory : IViewModelFactory<IDashBoardViewModel<object>>
+    internal class CategoryNavigatorVMFactory : IViewModelFactory<INavigator<object>>
     {
-        public CategoryDBVMFactory()
+        public CategoryNavigatorVMFactory()
         {
 
         }
         public object CreateViewModel()
         {
-            return new CategoryDashBoardViewModel();
+            return new CategoryNavigatorViewModel();
         }
     }
 }

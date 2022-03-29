@@ -12,24 +12,24 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.AbstractFactories
 {
-    internal class MainVM_Navigation_AbstractFactory : IAbstractViewModelFactory<MainMenuOptionsEnum>
+    internal class MainVM_AbstractFactory : IAbstractViewModelFactory<MainMenuOptionsEnum>
     {
         IViewModelFactory<ObservableCollection<ObservableCollection<object>>> _currentMonthVMFactory;
         IViewModelFactory<User> _userDashboardVMF;
         IViewModelFactory<IncomeItem> _incomeDBVMF;
         IViewModelFactory<ExpenseItem> _expenseDBVMF;
-        IViewModelFactory<IDashBoardViewModel<object>> _categoryDBVMF;
+        IViewModelFactory<INavigator<object>> _categoryDBVMF;
 
 
 
 
-        public MainVM_Navigation_AbstractFactory
+        public MainVM_AbstractFactory
             (
             IViewModelFactory<ObservableCollection<ObservableCollection<object>>> currentMonthVMFactory,
             IViewModelFactory<User> userDashBoardVMF,
             IViewModelFactory<IncomeItem> incomeDBVMF,
             IViewModelFactory<ExpenseItem> expenseDBVMF,
-            IViewModelFactory<IDashBoardViewModel<object>> categoryDBVMF
+            IViewModelFactory<INavigator<object>> categoryDBVMF
             )
         {
             _currentMonthVMFactory = currentMonthVMFactory;

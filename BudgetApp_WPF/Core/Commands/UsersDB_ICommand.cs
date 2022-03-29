@@ -14,7 +14,7 @@ namespace BudgetApp_WPF.Core.Commands
 {
     internal class UsersDB_ICommand : ICommand
     {
-        public UsersDB_ICommand(IDashBoardViewModel<User> userDashBoardViewModel, IAbstractViewModelFactory<User> usersAddEdit_AbstractFactory)
+        public UsersDB_ICommand(INavigator<User> userDashBoardViewModel, IAbstractViewModelFactory<User> usersAddEdit_AbstractFactory)
         {
         }
 

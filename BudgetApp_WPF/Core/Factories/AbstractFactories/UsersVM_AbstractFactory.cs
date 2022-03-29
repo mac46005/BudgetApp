@@ -1,4 +1,5 @@
 ﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories.BaseFactories;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.AbstractFactories
 {
-    internal class UsersAddEdit_AbstractFactory : IAbstractViewModelFactory<User>
+    internal class UsersVM_AbstractFactory : IAbstractViewModelFactory<UserDataViewOptions>
     {
-        public UsersAddEdit_AbstractFactory()
+        public UsersVM_AbstractFactory()
         {
 
         }
 
-        public object CreateViewModel(User viewType)
+        public object CreateViewModel(UserDataViewOptions viewType)
         {
             throw new NotImplementedException();
         }

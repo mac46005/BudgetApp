@@ -13,7 +13,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
     internal class AddEditUserViewModel : BaseViewModel<User>
     {
-        public AddEditUserViewModel(IAbstractViewModelFactory<User> usersAddEdit_AbstractFactory)
+        public AddEditUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint)
         {
             
         }

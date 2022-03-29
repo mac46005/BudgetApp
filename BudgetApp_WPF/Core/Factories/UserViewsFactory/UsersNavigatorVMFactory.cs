@@ -1,4 +1,5 @@
 ﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories.BaseFactories;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
@@ -15,11 +16,11 @@ namespace BudgetApp_WPF.Core.Factories.UserViewsFactory
 
 
 
-    internal class UserDBVMFactory : IViewModelFactory<User>
+    internal class UsersNavigatorVMFactory : IViewModelFactory<User>
     {
         IAPIEndpoint<User, int> _usersDataEndPoint;
-        IAbstractViewModelFactory<User> _usersAddEdit_AbstractFactory;
-        public UserDBVMFactory(IAPIEndpoint<User, int> usersDataEndPoint, IAbstractViewModelFactory<User> usersAddEdit_AbstractFactory)
+        IAbstractViewModelFactory<UserDataViewOptions> _usersAddEdit_AbstractFactory;
+        public UsersNavigatorVMFactory(IAPIEndpoint<User, int> usersDataEndPoint, IAbstractViewModelFactory<UserDataViewOptions> usersAddEdit_AbstractFactory)
         {
             _usersDataEndPoint = usersDataEndPoint;
             _usersAddEdit_AbstractFactory = usersAddEdit_AbstractFactory;
@@ -29,7 +30,7 @@ namespace BudgetApp_WPF.Core.Factories.UserViewsFactory
 
         public object CreateViewModel()
         {
-            return new UserDashBoardViewModel(_usersDataEndPoint, _usersAddEdit_AbstractFactory);
+            return new UsersNavigatorViewModel();
         }
     }
 }

@@ -9,7 +9,7 @@ using Budget_ClassLib.Models;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.IncomeVM
 {
-    internal class IncomeDashBoardViewModel : BaseViewModel<IncomeItem>
+    internal class IncomeNavigatorViewModel : BaseViewModel<IncomeItem>
     {
     }
 }

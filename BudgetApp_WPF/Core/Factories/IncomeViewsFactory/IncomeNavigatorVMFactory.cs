@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.IncomeViewsFactory
 {
-    internal class IncomeDBVMFactory : IViewModelFactory<IncomeItem>
+    internal class IncomeNavigatorVMFactory : IViewModelFactory<IncomeItem>
     {
 
-        public IncomeDBVMFactory()
+        public IncomeNavigatorVMFactory()
         {
 
         }
         public object CreateViewModel()
         {
-            return new IncomeDashBoardViewModel();
+            return new IncomeNavigatorViewModel();
         }
     }
 }

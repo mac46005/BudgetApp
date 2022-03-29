@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BudgetApp_WPF.MVVM.Views.Category
 {
     /// <summary>
-    /// Interaction logic for ExpenseSubCategoryDashBoardView.xaml
+    /// Interaction logic for ExpenseCategoryDashBoardView.xaml
     /// </summary>
-    public partial class ExpenseSubCategoryDashBoardView : UserControl
+    public partial class ExpenseCategoryNavigatorView : UserControl
     {
-        public ExpenseSubCategoryDashBoardView()
+        public ExpenseCategoryNavigatorView()
         {
             InitializeComponent();
         }

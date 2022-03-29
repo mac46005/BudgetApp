@@ -36,30 +36,30 @@
     </DataTemplate>
 
 
-    <DataTemplate DataType="{x:Type categoryVM:CategoryDashBoardViewModel}">
-        <categoryV:CategoryDashboardView/>
+    <DataTemplate DataType="{x:Type categoryVM:CategoryNavigatorViewModel}">
+        <categoryV:CategoryNavigatorView/>
     </DataTemplate>
 
 
-    <DataTemplate DataType="{x:Type expenseVM:ExpenseDashBoardViewModel}">
-        <expenseV:ExpenseDashBoardView/>
-    </DataTemplate>
-
-
-
-    <DataTemplate DataType="{x:Type historyVM:HistoryDashBoardViewModel}">
-        <historyV:HistoryDashBoardView/>
+    <DataTemplate DataType="{x:Type expenseVM:ExpenseNavigatorViewModel}">
+        <expenseV:ExpenseNavigatorView/>
     </DataTemplate>
 
 
 
-    <DataTemplate DataType="{x:Type incomeVM:IncomeDashBoardViewModel}">
-        <incomeV:IncomeDashBoardView/>
+    <DataTemplate DataType="{x:Type historyVM:HistoryNavigatorViewModel}">
+        <historyV:HistoryNavigatorView/>
     </DataTemplate>
 
 
-    <DataTemplate DataType="{x:Type userVM:UserDashBoardViewModel}">
-        <userV:UserDashBoardView/>
+
+    <DataTemplate DataType="{x:Type incomeVM:IncomeNavigatorViewModel}">
+        <incomeV:IncomeNavigatorView/>
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type userVM:UsersNavigatorViewModel}">
+        <userV:UserNavigatorView/>
     </DataTemplate>
     
     <!--END DASHBOARD -->

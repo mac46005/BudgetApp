@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.ExpenseVM
 {
-    internal class ExpenseDashBoardViewModel : BaseDashBoardViewModel<ExpenseItem>
+    internal class ExpenseNavigatorViewModel : BaseNavigatorViewModel<ExpenseItem>
     {
     }
 }

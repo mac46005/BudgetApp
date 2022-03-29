@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BudgetApp_WPF.MVVM.Views.History
+namespace BudgetApp_WPF.MVVM.Views.Category
 {
     /// <summary>
-    /// Interaction logic for HistoryDashBoardView.xaml
+    /// Interaction logic for ExpenseSubCategoryDashBoardView.xaml
     /// </summary>
-    public partial class HistoryDashBoardView : UserControl
+    public partial class ExpenseSubCategoryNavigatorView : UserControl
     {
-        public HistoryDashBoardView()
+        public ExpenseSubCategoryNavigatorView()
         {
             InitializeComponent();
         }
