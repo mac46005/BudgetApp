@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BudgetApp_WPF.MVVM.Views.User
@@ -18,7 +17,7 @@ namespace BudgetApp_WPF.MVVM.Views.User
     /// <summary>
     /// Interaction logic for AddEditUserView.xaml
     /// </summary>
-    public partial class AddEditUserView : UserControl
+    public partial class AddEditUserView : Window
     {
         public AddEditUserView()
         {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.Core.Factories
+namespace BudgetApp_WPF.Core.Factories.BaseFactories
 {
     /// <summary>
     /// The main factory resposible for producing the viewModel classes

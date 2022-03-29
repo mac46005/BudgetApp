@@ -12,10 +12,8 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
     internal class AddEditUserViewModel : BaseViewModel<User>
     {
-        IAPIEndpoint<Budget_ClassLib.Models.User, int> _usersDataEndPoint;
-        public AddEditUserViewModel(IAPIEndpoint<User, int> usersDataEndPoint)
-        {
-            _usersDataEndPoint = usersDataEndPoint;
-        }
+
+
+
     }
 }

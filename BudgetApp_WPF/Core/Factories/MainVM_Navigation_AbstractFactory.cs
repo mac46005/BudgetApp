@@ -1,5 +1,6 @@
 ﻿using Budget_ClassLib.Models;
 using BudgetApp_WPF.Core.Enums;
+using BudgetApp_WPF.Core.Factories.BaseFactories;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using System;

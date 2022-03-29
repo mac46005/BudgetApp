@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.Core.Factories
+namespace BudgetApp_WPF.Core.Factories.BaseFactories
 {
     /// <summary>
     /// Creates a viewmodel-T-. T represents the model that represents the ViewModel
@@ -13,7 +13,7 @@ namespace BudgetApp_WPF.Core.Factories
     /// <typeparam name="T">Represents the model for the ViewModel being created</typeparam>
     internal interface IViewModelFactory<T>
     {
-        
+
         object CreateViewModel();
     }
 }
