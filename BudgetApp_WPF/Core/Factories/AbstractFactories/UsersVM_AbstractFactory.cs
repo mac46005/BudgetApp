@@ -11,14 +11,29 @@ namespace BudgetApp_WPF.Core.Factories.AbstractFactories
 {
     internal class UsersVM_AbstractFactory : IAbstractViewModelFactory<UserDataViewOptions>
     {
-        public UsersVM_AbstractFactory()
+        IDataViewModelFactory<User> _usersDVMFactory;
+        public UsersVM_AbstractFactory(IDataViewModelFactory<User> usersDVMFactory)
         {
-
+            _usersDVMFactory = usersDVMFactory;
         }
 
         public object CreateViewModel(UserDataViewOptions viewType)
         {
-            throw new NotImplementedException();
+            switch (viewType)
+            {
+                case UserDataViewOptions.ViewUsers:
+                    return _usersDVMFactory.CreateViewModel();
+                case UserDataViewOptions.AddUser:
+                    return _usersDVMFactory.CreateViewModel();
+                case UserDataViewOptions.EditUser:
+                    return _usersDVMFactory.CreateViewModel();
+                case UserDataViewOptions.UpdateUser:
+                    return _usersDVMFactory.CreateViewModel();
+                case UserDataViewOptions.DeleteUser:
+                    return _usersDVMFactory.CreateViewModel();
+                default:
+                    return _usersDVMFactory.CreateViewModel();
+            }
         }
     }
 }

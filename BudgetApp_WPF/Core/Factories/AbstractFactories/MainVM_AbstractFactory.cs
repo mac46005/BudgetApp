@@ -15,10 +15,10 @@ namespace BudgetApp_WPF.Core.Factories.AbstractFactories
     internal class MainVM_AbstractFactory : IAbstractViewModelFactory<MainMenuOptionsEnum>
     {
         IViewModelFactory<ObservableCollection<ObservableCollection<object>>> _currentMonthVMFactory;
-        IViewModelFactory<User> _userDashboardVMF;
-        IViewModelFactory<IncomeItem> _incomeDBVMF;
-        IViewModelFactory<ExpenseItem> _expenseDBVMF;
-        IViewModelFactory<INavigator<object>> _categoryDBVMF;
+        INavigatorViewModelFactory<User> _userDashboardVMF;
+        INavigatorViewModelFactory<IncomeItem> _incomeDBVMF;
+        INavigatorViewModelFactory<ExpenseItem> _expenseDBVMF;
+        INavigatorViewModelFactory<INavigator<object>> _categoryDBVMF;
 
 
 
@@ -26,10 +26,10 @@ namespace BudgetApp_WPF.Core.Factories.AbstractFactories
         public MainVM_AbstractFactory
             (
             IViewModelFactory<ObservableCollection<ObservableCollection<object>>> currentMonthVMFactory,
-            IViewModelFactory<User> userDashBoardVMF,
-            IViewModelFactory<IncomeItem> incomeDBVMF,
-            IViewModelFactory<ExpenseItem> expenseDBVMF,
-            IViewModelFactory<INavigator<object>> categoryDBVMF
+            INavigatorViewModelFactory<User> userDashBoardVMF,
+            INavigatorViewModelFactory<IncomeItem> incomeDBVMF,
+            INavigatorViewModelFactory<ExpenseItem> expenseDBVMF,
+            INavigatorViewModelFactory<INavigator<object>> categoryDBVMF
             )
         {
             _currentMonthVMFactory = currentMonthVMFactory;

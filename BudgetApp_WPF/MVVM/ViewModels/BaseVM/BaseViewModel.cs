@@ -12,7 +12,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
     /// <summary>
     /// 
     /// </summary>
-    internal class BaseViewModel<T> : IViewModel<T>
+    internal abstract class BaseViewModel<T> : IViewModel<T>
     {
         public T Model { get; set; }
 

@@ -12,11 +12,23 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal class BaseAddEditModel_ViewModel<T, U> : IAddEditModel_ViewModel<T, U> where T : BaseModel<U>
+    internal abstract class BaseAddEditModel_ViewModel<T, U> : IAddEditModel_ViewModel<T, U> where T : BaseModel<U>
     {
 
         public DataManipulationOptionsEnum Option { get; set; }
-        public T Model { get; set; }
+        private T _model;
+        public T Model 
+        {
+            get
+            {
+                return _model;
+            }
+            set
+            {
+                _model = value;
+                OnPropertyChanged("Model");
+            }
+        }
 
         public IAPIEndpoint<T, U> APIEndPoint { get; }
 

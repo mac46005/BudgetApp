@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.CategoryViewsFactory
 {
-    internal class CategoryNavigatorVMFactory : IViewModelFactory<INavigator<object>>
+    internal class CategoryNavigatorVMFactory : INavigatorViewModelFactory<INavigator<object>>
     {
         public CategoryNavigatorVMFactory()
         {

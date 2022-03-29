@@ -12,6 +12,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -19,31 +20,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Manage User"/>
+            <Button Grid.Column="1"
+                    Content="View Data"
+                    Command="{Binding UpdateCurrentViewModelICommand}"
+                    CommandParameter="{x:Static enums:UserDataViewOptions.ViewUsers}"/>
             <Button Grid.Column="2"
                     Content="Add User"
                     Command="{Binding UpdateCurrentViewModelICommand}"
-                    CommandParameter="{x:Static enums:DataManipulationOptionsEnum.Add}"/>
+                    CommandParameter="{x:Static enums:UserDataViewOptions.AddUser}"/>
         </Grid>
-        <ListView Grid.Row="1"
-                  ItemsSource="{Binding DataCollection}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0"
-                               Content="{Binding ID}"/>
-                        <Label Grid.Column="1"
-                               Content="{Binding FirstName}"/>
-                        <Label Grid.Column="2"
-                               Content="{Binding LastName}"/>
-                        <!--IMPLEMENT A DELETE AND UPDATE BUTTON-->
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        
+        <ContentControl Grid.Row="1"
+                        Content="{Binding ViewModel}"/>
     </Grid>
 </UserControl>

@@ -10,19 +10,19 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal class BaseNavigatorViewModel<T> : INavigator<T>
+    internal abstract class BaseNavigatorViewModel<T> : INavigator<T>
     {
-        private object _currentViewModel;
+        private object _ViewModel;
         public object ViewModel{
             get
             {
-                return _currentViewModel;
+                return _ViewModel;
             }
 
             set
             {
-                _currentViewModel = value;
-                OnPropertyChanged("CurrentViewModel");
+                _ViewModel = value;
+                OnPropertyChanged("ViewModel");
             }
         }
         public ICommand UpdateCurrentViewModelICommand { get; set; }

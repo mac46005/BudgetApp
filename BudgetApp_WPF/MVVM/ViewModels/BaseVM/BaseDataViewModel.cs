@@ -12,17 +12,42 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal class BaseDataViewModel<T,U> : IDataViewModel<T,U> where T : BaseModel<U>
+    internal abstract class BaseDataViewModel<T,U> : IDataViewModel<T,U> where T : BaseModel<U>
     {
-        public ObservableCollection<T> DataCollection { get; set; }
+        private ObservableCollection<T> _dataCollection;
+        public ObservableCollection<T> DataCollection 
+        {
+            get
+            {
+                return _dataCollection;
+            }
+            set
+            {
+                _dataCollection = value;
+                OnPropertyChanged("DataCollection");
+            }
+        }
 
-        public T Model { get; set; }
+        private T _model;
+        public T Model 
+        {
+            get
+            {
+                return _model;
+            }
+            set
+            {
+                _model = value;
+                OnPropertyChanged("Model");
+            }
+        }
 
         public BudgetDB_APIAccess_ClassLib.API.Interfaces.IGetAsync<T, U> GetAsync { get; }
 
         public BaseDataViewModel(IAPIEndpoint<T,U> apiEndPoint)
         {
             GetAsync = apiEndPoint;
+            LoadData();
         }
 
 

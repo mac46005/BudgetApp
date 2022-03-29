@@ -23,14 +23,11 @@
                     xmlns:userV="clr-namespace:BudgetApp_WPF.MVVM.Views.User"
                     >
     
-    <!--START NAVIGATION-->
     <DataTemplate DataType="{x:Type navVM:MainVM_NavigationViewModel}">
         <navV:MainVM_NavigationView/>
     </DataTemplate>
-    <!--END NAVIGATION-->
-    
-    <!--START DASHBOARD-->
-    
+
+
     <DataTemplate DataType="{x:Type viewM:CurrentMonthViewModel}">
         <views:CurrentMonthView/>
     </DataTemplate>
@@ -61,6 +58,7 @@
     <DataTemplate DataType="{x:Type userVM:UsersNavigatorViewModel}">
         <userV:UserNavigatorView/>
     </DataTemplate>
-    
-    <!--END DASHBOARD -->
+    <DataTemplate DataType="{x:Type userVM:UserDataViewModel}">
+        <userV:UserDataView/>
+    </DataTemplate>
 </ResourceDictionary>

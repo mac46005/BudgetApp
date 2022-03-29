@@ -62,17 +62,27 @@ namespace BudgetApp_WPF
 
 
             // View Factories
-            services.AddTransient<IViewModelFactory<User>, UsersNavigatorVMFactory>();
-            services.AddTransient<IViewModelFactory<IncomeItem>, IncomeNavigatorVMFactory>();
-            services.AddTransient<IViewModelFactory<ExpenseItem>, ExpenseNavigatorVMFactory>();
-            services.AddTransient<IViewModelFactory<ObservableCollection<ObservableCollection<object>>>, CurrentMonthDBVMFactory>();
-            services.AddTransient<IViewModelFactory<INavigator<object>>,CategoryNavigatorVMFactory>();
-            services.AddTransient<IAbstractViewModelFactory<MainMenuOptionsEnum>, MainVM_AbstractFactory>();
             services.AddTransient<IAbstractViewModelFactory<UserDataViewOptions>, UsersVM_AbstractFactory>();
+            services.AddTransient<IDataViewModelFactory<User>, UserDataViewFactory>();
+            services.AddTransient<INavigatorViewModelFactory<User>, UsersNavigatorVMFactory>();
+
+
+
+            services.AddTransient<INavigatorViewModelFactory<IncomeItem>, IncomeNavigatorVMFactory>();
+
+            services.AddTransient<INavigatorViewModelFactory<ExpenseItem>, ExpenseNavigatorVMFactory>();
+
+            services.AddTransient<IViewModelFactory<ObservableCollection<ObservableCollection<object>>>, CurrentMonthDBVMFactory>();
+
+            services.AddTransient<INavigatorViewModelFactory<INavigator<object>>, CategoryNavigatorVMFactory>();
+
+            services.AddTransient<IAbstractViewModelFactory<MainMenuOptionsEnum>, MainVM_AbstractFactory>();
+
+
             //
 
             // Navigation
-            services.AddTransient<INavigator<object>,MainVM_NavigationViewModel>();
+            services.AddTransient<INavigator<object>, MainVM_NavigationViewModel>();
             //
 
             // Commands
