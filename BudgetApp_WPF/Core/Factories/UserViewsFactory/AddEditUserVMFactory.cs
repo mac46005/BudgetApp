@@ -19,7 +19,7 @@ namespace BudgetApp_WPF.Core.Factories.UserViewsFactory
         }
         public object CreateViewModel()
         {
-            new AddEditUserViewModel();
+            return new AddEditUserViewModel(_usersDataEndPoint);
         }
     }
 }
