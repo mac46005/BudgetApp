@@ -17,7 +17,7 @@ namespace BudgetApp_WPF.Core.Factories
         IViewModelFactory<User> _userDashboardVMF;
         IViewModelFactory<IncomeItem> _incomeDBVMF;
         IViewModelFactory<ExpenseItem> _expenseDBVMF;
-
+        IViewModelFactory<IDashBoardViewModel<object>> _categoryDBVMF;
 
 
 
@@ -27,13 +27,15 @@ namespace BudgetApp_WPF.Core.Factories
             IViewModelFactory<ObservableCollection<ObservableCollection<object>>> currentMonthVMFactory,
             IViewModelFactory<User> userDashBoardVMF,
             IViewModelFactory<IncomeItem> incomeDBVMF,
-            IViewModelFactory<ExpenseItem> expenseDBVMF
+            IViewModelFactory<ExpenseItem> expenseDBVMF,
+            IViewModelFactory<IDashBoardViewModel<object>> categoryDBVMF
             )
         {
             _currentMonthVMFactory = currentMonthVMFactory;
             _userDashboardVMF = userDashBoardVMF;
             _incomeDBVMF = incomeDBVMF;
             _expenseDBVMF = expenseDBVMF;
+            _categoryDBVMF = categoryDBVMF;
         }
 
         public object CreateViewModel(MainMenuOptionsEnum viewType)
@@ -51,7 +53,7 @@ namespace BudgetApp_WPF.Core.Factories
                 case MainMenuOptionsEnum.Expense:
                     return _expenseDBVMF.CreateViewModel();
                 case MainMenuOptionsEnum.Category:
-                    return _currentMonthVMFactory.CreateViewModel();
+                    return _categoryDBVMF.CreateViewModel();
                 case MainMenuOptionsEnum.User:
                     return _userDashboardVMF.CreateViewModel();
                 case MainMenuOptionsEnum.Settings:

@@ -60,6 +60,7 @@ namespace BudgetApp_WPF
             services.AddTransient<IViewModelFactory<IncomeItem>, IncomeDBVMFactory>();
             services.AddTransient<IViewModelFactory<ExpenseItem>, ExpenseDBVMFactory>();
             services.AddTransient<IViewModelFactory<ObservableCollection<ObservableCollection<object>>>, CurrentMonthDBVMFactory>();
+            services.AddTransient <IViewModelFactory<IDashBoardViewModel<object>>,CategoryDBVMFactory>();
             services.AddTransient<IAbstractViewModelFactory<MainMenuOptionsEnum>, MainVM_Navigation_AbstractFactory>();
             //
 
