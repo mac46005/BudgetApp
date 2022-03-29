@@ -12,7 +12,19 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
     internal class BaseDashBoardViewModel<T> : IDashBoardViewModel<T>
     {
-        public ObservableCollection<T> DataCollection { get; set; }
+        private ObservableCollection<T> _dataCollection;
+        public ObservableCollection<T> DataCollection 
+        {
+            get
+            {
+                return _dataCollection;
+            }
+            set
+            {
+                _dataCollection = value;
+                OnPropertyChanged("DataCollection");
+            }
+        }
 
 
         private object _currentViewModel;

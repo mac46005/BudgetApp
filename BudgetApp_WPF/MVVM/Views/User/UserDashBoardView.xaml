@@ -22,7 +22,7 @@
                     Content="Add User"/>
         </Grid>
         <ListView Grid.Row="1"
-                  ItemsSource="{Binding UsersColleciton}">
+                  ItemsSource="{Binding DataCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>

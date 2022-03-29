@@ -73,7 +73,7 @@ namespace BudgetDB_APIAccess_ClassLib.API
         {
             try
             {
-                using (HttpResponseMessage response = await _apiClient.APIClientObject.GetAsync("api/UsersDataEndpoint"))
+                using (HttpResponseMessage response = await _apiClient.APIClientObject.GetAsync("/api/UsersEndPoint"))
                 {
                     if (response.IsSuccessStatusCode)
                     {

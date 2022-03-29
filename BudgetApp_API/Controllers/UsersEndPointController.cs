@@ -1,6 +1,7 @@
 ﻿using Budget_ClassLib.Models;
 using BudgetApp_API.DataAccess.BudgetAppDataAccess;
 using BudgetApp_API.DataAccess.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 namespace BudgetApp_API.Controllers
 {
     [Route("api/[controller]")]
+    [AllowAnonymous]
     [ApiController]
     public class UsersEndPointController : ControllerBase
     {

@@ -2,6 +2,8 @@
 using Budget_ClassLib.Models;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using System.ComponentModel;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
@@ -12,11 +14,8 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
         public UserDashBoardViewModel(IAPIEndpoint<User, int> usersDataEndPoint)
         {
             _userDataEndPoint = usersDataEndPoint;
+            LoadData();
         }
-
-
-
-
 
 
 
