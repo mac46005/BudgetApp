@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BudgetApp_WPF.MVVM.Views.User
 {
     /// <summary>
-    /// Interaction logic for AddEditUserView.xaml
+    /// Interaction logic for UserDataView.xaml
     /// </summary>
-    public partial class AddEditUserView : UserControl
+    public partial class UserDataView : UserControl
     {
-        public AddEditUserView()
+        public UserDataView()
         {
             InitializeComponent();
         }

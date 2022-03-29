@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
+namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
 {
-    interface IAddEditModel_ViewModel<T,U> : IViewModel<T> where T : BaseModel<U>
+    interface IAddEditModel_ViewModel<T, U> : IViewModel<T> where T : BaseModel<U>
     {
-        IAPIEndpoint<T,U> APIEndPoint { get; }
+        IAPIEndpoint<T, U> APIEndPoint { get; }
         ICommand ManipulateDataCommand { get; }
         DataManipulationOptionsEnum Option { get; set; }
     }

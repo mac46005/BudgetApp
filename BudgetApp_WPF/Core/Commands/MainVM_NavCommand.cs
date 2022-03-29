@@ -1,7 +1,7 @@
 ﻿using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories.BaseFactories;
 using BudgetApp_WPF.MVVM.ViewModels;
-using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
+using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

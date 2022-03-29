@@ -1,37 +1,35 @@
 ﻿using Budget_ClassLib.Models;
-using BudgetApp_WPF.Core.Enums;
+using BudgetApp_API.DataAccess.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetDB_APIAccess_ClassLib.API.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal class BaseAddEditModel_ViewModel<T, U> : IAddEditModel_ViewModel<T, U> where T : BaseModel<U>
+    internal class BaseDataViewModel<T,U> : IDataViewModel<T,U> where T : BaseModel<U>
     {
+        public ObservableCollection<T> DataCollection { get; set; }
 
-        public DataManipulationOptionsEnum Option { get; set; }
         public T Model { get; set; }
 
-        public IAPIEndpoint<T, U> APIEndPoint { get; }
+        public BudgetDB_APIAccess_ClassLib.API.Interfaces.IGetAsync<T, U> GetAsync { get; }
 
-        public ICommand ManipulateDataCommand { get; }
-
-
-
-        public BaseAddEditModel_ViewModel(IAPIEndpoint<T, U> apiEndPoint, DataManipulationOptionsEnum option = DataManipulationOptionsEnum.Insert, T model = default)
+        public BaseDataViewModel(IAPIEndpoint<T,U> apiEndPoint)
         {
-
-            Option = option;
+            GetAsync = apiEndPoint;
         }
 
 
-
+        public virtual async void LoadData()
+        {
+            DataCollection = new ObservableCollection<T>(await GetAsync.GetAsync());
+        }
 
 
         public event PropertyChangedEventHandler? PropertyChanged;

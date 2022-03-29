@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
+namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
 {
     /// <summary>
     /// Base View Model class. Also implements IObservableObject

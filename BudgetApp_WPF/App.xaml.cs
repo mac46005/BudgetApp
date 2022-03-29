@@ -9,7 +9,7 @@ using BudgetApp_WPF.Core.Factories.ExpenseViewsFactory;
 using BudgetApp_WPF.Core.Factories.IncomeViewsFactory;
 using BudgetApp_WPF.Core.Factories.UserViewsFactory;
 using BudgetApp_WPF.MVVM.ViewModels;
-using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
+using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.NavigationVM;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using BudgetDB_APIAccess_ClassLib.API;

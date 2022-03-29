@@ -1,4 +1,5 @@
 ﻿using BudgetApp_WPF.Core;
+using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

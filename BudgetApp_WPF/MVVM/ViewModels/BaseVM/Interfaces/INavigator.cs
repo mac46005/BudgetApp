@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
+namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
 {
     /// <summary>
     /// The INavigator controls the selection of view models.

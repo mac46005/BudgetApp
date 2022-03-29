@@ -1,5 +1,5 @@
 ﻿using BudgetApp_WPF.Core.Factories.BaseFactories;
-using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
+using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.CategoryVM;
 using System;
 using System.Collections.Generic;
