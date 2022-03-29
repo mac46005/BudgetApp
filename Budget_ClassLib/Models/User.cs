@@ -11,5 +11,9 @@ namespace Budget_ClassLib.Models
         public int ID { get; set; }
         public string FirstName { get; set; } = String.Empty;
         public string LastName { get; set; } = String.Empty;
+        public override string ToString()
+        {
+            return base.ToString() + $"\nFirstName: {FirstName}\nLastName: {LastName}";
+        }
     }
 }

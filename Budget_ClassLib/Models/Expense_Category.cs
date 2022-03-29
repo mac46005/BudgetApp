@@ -10,5 +10,9 @@ namespace Budget_ClassLib.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public override string ToString()
+        {
+            return base.ToString() + $"\nName: {Name}";
+        }
     }
 }

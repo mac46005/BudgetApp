@@ -10,6 +10,11 @@ namespace Budget_ClassLib.Models
     {
         public int ID { get; set; }
         public int ExpenseCategory_ID { get; set; }
+        public Expense_Category Expense_Category { get; set; }
         public string Name { get; set; }
+        public override string ToString()
+        {
+            return base.ToString() + $"\nExpense Category: {Expense_Category.Name}\nName: {Name}";
+        }
     }
 }
