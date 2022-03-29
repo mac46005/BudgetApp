@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.Core.Factories
+namespace BudgetApp_WPF.Core.Factories.AbstractFactories
 {
     internal class MainVM_Navigation_AbstractFactory : IAbstractViewModelFactory<MainMenuOptionsEnum>
     {

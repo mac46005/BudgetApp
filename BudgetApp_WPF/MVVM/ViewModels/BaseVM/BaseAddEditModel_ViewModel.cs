@@ -17,13 +17,13 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         public DataManipulationOptionsEnum Option { get; set; }
         public T Model { get; set; }
 
-        public IAPIEndpoint<T, U> APIEndPoint => throw new NotImplementedException();
+        public IAPIEndpoint<T, U> APIEndPoint { get; }
 
-        public ICommand ManipulateDataCommand => throw new NotImplementedException();
+        public ICommand ManipulateDataCommand { get; }
 
-       
 
-        public BaseAddEditModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint, DataManipulationOptionsEnum option = DataManipulationOptionsEnum.Insert,T model = default)
+
+        public BaseAddEditModel_ViewModel(IAPIEndpoint<T, U> apiEndPoint, DataManipulationOptionsEnum option = DataManipulationOptionsEnum.Insert, T model = default)
         {
 
             Option = option;
@@ -31,7 +31,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 
 
 
-        
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged(string propName)
