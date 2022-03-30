@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal abstract class BaseDataViewModel<T,U> : IDataViewModel<T,U> where T : BaseModel<U>
+    internal abstract class BaseDataViewModel<T,U> : BaseViewModel<T>, IDataViewModel<T,U> where T : BaseModel<U>
     {
         private ObservableCollection<T> _dataCollection;
         public ObservableCollection<T> DataCollection 
@@ -27,21 +27,6 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
                 OnPropertyChanged("DataCollection");
             }
         }
-
-        private T _model;
-        public T Model 
-        {
-            get
-            {
-                return _model;
-            }
-            set
-            {
-                _model = value;
-                OnPropertyChanged("Model");
-            }
-        }
-
         public BudgetDB_APIAccess_ClassLib.API.Interfaces.IGetAsync<T, U> GetAsync { get; }
 
         public BaseDataViewModel(IAPIEndpoint<T,U> apiEndPoint)
@@ -54,13 +39,6 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         public virtual async void LoadData()
         {
             DataCollection = new ObservableCollection<T>(await GetAsync.GETAsync());
-        }
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        public void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
     }
 }

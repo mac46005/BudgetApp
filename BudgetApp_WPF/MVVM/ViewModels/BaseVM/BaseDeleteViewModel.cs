@@ -9,29 +9,8 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal abstract class BaseDeleteViewModel<T> : IDeleteViewModel<T>
+    internal abstract class BaseDeleteViewModel<T> : BaseViewModel<T>, IDeleteViewModel<T>
     {
         public ICommand DeleteViewCommand { get; }
-
-        private T _model;
-        public T Model 
-        {
-            get
-            {
-                return _model;
-            }
-            set
-            {
-                _model = value;
-                OnPropertyChanged("Model");
-            }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        public void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
     }
 }

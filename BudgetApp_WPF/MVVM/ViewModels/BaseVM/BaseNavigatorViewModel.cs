@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal abstract class BaseNavigatorViewModel<T> : INavigator<T>
+    internal abstract class BaseNavigatorViewModel<T> : BaseViewModel<T>,INavigator<T>
     {
         private object _ViewModel;
         public object ViewModel{
@@ -26,29 +26,5 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
             }
         }
         public ICommand UpdateCurrentViewModelICommand { get; set; }
-
-
-
-
-
-
-
-
-        public T Model { get; set; }
-
-
-
-
-
-
-
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        public void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
     }
 }

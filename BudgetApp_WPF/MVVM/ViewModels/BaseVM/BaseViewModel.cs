@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal abstract class BaseViewModel<T> : IViewModel<T>
+    internal abstract class BaseViewModel<T> : ObservableObject, IViewModel<T>
     {
 
 
@@ -25,17 +25,6 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
                 _model = value;
                 OnPropertyChanged("Model");
             } 
-        }
-
-
-
-
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        public void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
     }
 }
