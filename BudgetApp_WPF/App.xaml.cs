@@ -3,7 +3,7 @@ using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories;
 using BudgetApp_WPF.Core.Factories.AbstractFactories;
-using BudgetApp_WPF.Core.Factories.BaseFactories;
+using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 using BudgetApp_WPF.Core.Factories.CategoryViewsFactory;
 using BudgetApp_WPF.Core.Factories.ExpenseViewsFactory;
 using BudgetApp_WPF.Core.Factories.IncomeViewsFactory;

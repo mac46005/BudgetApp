@@ -1,7 +1,7 @@
 ﻿using BudgetApp_WPF.Core;
 using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Enums;
-using BudgetApp_WPF.Core.Factories.BaseFactories;
+using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.NavigationVM;
 using System;

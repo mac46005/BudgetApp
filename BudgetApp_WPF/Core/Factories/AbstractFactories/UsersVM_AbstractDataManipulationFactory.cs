@@ -1,6 +1,6 @@
 ﻿using Budget_ClassLib.Models;
 using BudgetApp_WPF.Core.Enums;
-using BudgetApp_WPF.Core.Factories.BaseFactories;
+using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

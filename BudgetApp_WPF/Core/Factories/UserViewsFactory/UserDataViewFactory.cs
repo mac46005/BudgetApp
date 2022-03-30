@@ -1,5 +1,5 @@
 ﻿using Budget_ClassLib.Models;
-using BudgetApp_WPF.Core.Factories.BaseFactories;
+using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using BudgetDB_APIAccess_ClassLib.API.Interfaces;
 using System;

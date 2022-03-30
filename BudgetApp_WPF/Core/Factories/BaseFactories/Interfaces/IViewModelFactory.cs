@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetApp_WPF.Core.Factories.BaseFactories
+namespace BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces
 {
     /// <summary>
     /// Creates a viewmodel-T-. T represents the model that represents the ViewModel

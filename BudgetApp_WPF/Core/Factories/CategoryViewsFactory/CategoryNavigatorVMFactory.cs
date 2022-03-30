@@ -1,4 +1,4 @@
-﻿using BudgetApp_WPF.Core.Factories.BaseFactories;
+﻿using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.CategoryVM;
 using System;
