@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    /// <summary>
-    /// 
-    /// </summary>
     internal abstract class BaseViewModel<T> : IViewModel<T>
     {
+
+
         private T _model;
         public T Model 
         {
@@ -28,8 +27,12 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
             } 
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
 
+
+
+
+
+        public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged(string propName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));

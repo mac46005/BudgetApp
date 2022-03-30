@@ -53,7 +53,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 
         public virtual async void LoadData()
         {
-            DataCollection = new ObservableCollection<T>(await GetAsync.GetAsync());
+            DataCollection = new ObservableCollection<T>(await GetAsync.GETAsync());
         }
 
 

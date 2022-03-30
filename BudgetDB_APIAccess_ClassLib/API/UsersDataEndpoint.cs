@@ -45,7 +45,7 @@ namespace BudgetDB_APIAccess_ClassLib.API
             }
         }
 
-        public async Task<User> GetAsync(int ID)
+        public async Task<User> GETAsync(int ID)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace BudgetDB_APIAccess_ClassLib.API
             }
         }
 
-        public async Task<IEnumerable<User>> GetAsync()
+        public async Task<IEnumerable<User>> GETAsync()
         {
             try
             {
@@ -112,7 +112,7 @@ namespace BudgetDB_APIAccess_ClassLib.API
 
 
 
-        public async Task PutAsync(User obj, int ID)
+        public async Task PUTAsync(User obj, int ID)
         {
             throw new NotImplementedException();
         }

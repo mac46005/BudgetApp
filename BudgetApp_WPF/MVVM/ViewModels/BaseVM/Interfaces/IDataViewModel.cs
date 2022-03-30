@@ -9,10 +9,24 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
 {
+    /// <summary>
+    /// The ViewModel that has a collection of data.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="U"></typeparam>
     interface IDataViewModel<T,U> : IViewModel<T> where T : BaseModel<U>
     {
+       
         IGetAsync<T,U> GetAsync { get; }
+
+        /// <summary>
+        /// The collection of data from the external source
+        /// </summary>
         ObservableCollection<T> DataCollection { get; set; }
+
+        /// <summary>
+        /// Loads the data from an external source
+        /// </summary>
         void LoadData();
     }
 }

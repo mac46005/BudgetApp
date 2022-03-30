@@ -11,7 +11,7 @@ namespace BudgetApp_WPF.Core
         /// <summary>
         /// Updates the property using INotifyPropertyChanged
         /// </summary>
-        /// <param name="propName"></param>
+        /// <param name="propName">The name of the property that is being updated</param>
         void OnPropertyChanged(string propName);
     }
 }

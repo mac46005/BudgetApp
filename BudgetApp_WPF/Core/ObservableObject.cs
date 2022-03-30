@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core
 {
-    internal class ObservableObject : IObservableObject
+    internal abstract class ObservableObject : IObservableObject
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 

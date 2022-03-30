@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace BudgetDB_APIAccess_ClassLib.API.Interfaces
 {
+    /// <summary>
+    /// An API PUT function that access the API through an API client object.
+    /// </summary>
+    /// <typeparam name="T">Must inheret from BaseModel</typeparam>
+    /// <typeparam name="U">The data that represents the ID property of the BaseModel</typeparam>
     public interface IPutAsync<T,U>
     {
-        Task PutAsync(T obj, U ID);
+        Task PUTAsync(T obj, U ID);
     }
 }
