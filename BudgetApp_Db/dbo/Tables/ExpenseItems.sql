@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[ExpenseItems]
 (
 	[ID] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
-    [PersonID] INT NOT NULL, 
+    [UserID] INT NOT NULL, 
     [ExpenseCategory_ID] INT NOT NULL, 
     [ExpenseSubCategory_ID] INT NOT NULL, 
     [Amount] MONEY NOT NULL DEFAULT 0, 

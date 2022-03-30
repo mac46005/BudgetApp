@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[IncomeItems]
 (
 	[ID] INT NOT NULL PRIMARY KEY, 
-    [PersonID] INT NOT NULL, 
+    [UserID] INT NOT NULL, 
     [IncomeCategory_ID] INT NOT NULL, 
     [Amount] MONEY NOT NULL DEFAULT 0, 
     [TimeStamp] DATETIME2 NOT NULL, 
