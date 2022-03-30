@@ -27,7 +27,6 @@
   <ItemGroup>
     <Folder Include="Core\Assets\" />
     <Folder Include="Core\Factories\HistoryViewsFactory\" />
-    <Folder Include="MVVM\Models\" />
   </ItemGroup>
 
   <ItemGroup>

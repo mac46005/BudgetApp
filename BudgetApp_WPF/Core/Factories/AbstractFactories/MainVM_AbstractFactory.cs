@@ -63,5 +63,10 @@ namespace BudgetApp_WPF.Core.Factories.AbstractFactories
                     return _currentMonthVMFactory.CreateViewModel();
             }
         }
+
+        public object CreateViewModel()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

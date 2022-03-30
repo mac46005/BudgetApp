@@ -15,5 +15,6 @@ namespace BudgetApp_WPF.Core.Factories.BaseFactories
     {
 
         object CreateViewModel(T viewType);
+        object CreateViewModel();
     }
 }

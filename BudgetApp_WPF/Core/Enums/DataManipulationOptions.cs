@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Enums
 {
-    public enum DataManipulationOptionsEnum
+    public enum DataManipulationOptions
     {
+        View,
         Insert,
         Add,
         Edit,

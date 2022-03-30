@@ -12,23 +12,10 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    internal abstract class BaseAddEditModel_ViewModel<T, U> : IAddEditModel_ViewModel<T, U> where T : BaseModel<U>
+    internal abstract class BaseAddEditModel_ViewModel<T, U> : BaseViewModel<T>, IAddEditModel_ViewModel<T, U> where T : BaseModel<U>
     {
 
-        public DataManipulationOptionsEnum Option { get; set; }
-        private T _model;
-        public T Model 
-        {
-            get
-            {
-                return _model;
-            }
-            set
-            {
-                _model = value;
-                OnPropertyChanged("Model");
-            }
-        }
+        public DataManipulationOptions Option { get; set; }
 
         public IAPIEndpoint<T, U> APIEndPoint { get; }
 
@@ -36,20 +23,19 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 
 
 
-        public BaseAddEditModel_ViewModel(IAPIEndpoint<T, U> apiEndPoint, DataManipulationOptionsEnum option = DataManipulationOptionsEnum.Insert, T model = default)
+        public BaseAddEditModel_ViewModel(IAPIEndpoint<T, U> apiEndPoint, DataManipulationOptions option = DataManipulationOptions.Insert, T model = default)
         {
 
             Option = option;
+            if(model != null)
+            {
+                Model = model;
+            }
+
+
+
+
         }
 
-
-
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        public void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Budget_ClassLib.Models;
 using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories.BaseFactories;
+using BudgetApp_WPF.MVVM.Models;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using System;
@@ -14,12 +15,12 @@ namespace BudgetApp_WPF.Core.Commands
 {
     internal class UsersCreateVM_Command : ICommand
     {
-        private readonly IAbstractViewModelFactory<UserDataViewOptions> _userVM_AbstractFactory;
+        private readonly IAbstractDataManipulationViewFactory<User> _usersADMVFactory;
         private readonly INavigator<User> _userNavigatorViewModel;
-        public UsersCreateVM_Command(INavigator<User> userNavigatorViewModel, IAbstractViewModelFactory<UserDataViewOptions> userVM_AbstractFactory)
+        public UsersCreateVM_Command(INavigator<User> userNavigatorViewModel, IAbstractDataManipulationViewFactory<User> usersADMVFactoy)
         {
             _userNavigatorViewModel = userNavigatorViewModel;
-            _userVM_AbstractFactory = userVM_AbstractFactory;
+            _usersADMVFactory = usersADMVFactoy;
         }
 
         public event EventHandler? CanExecuteChanged;
@@ -31,10 +32,14 @@ namespace BudgetApp_WPF.Core.Commands
 
         public void Execute(object? parameter)
         {
-            if(parameter is UserDataViewOptions)
+            if(parameter is DataManipulationItem)
             {
-                UserDataViewOptions option = (UserDataViewOptions)parameter;
-                _userNavigatorViewModel.ViewModel = _userVM_AbstractFactory.CreateViewModel(option);
+                // Do something
+            }
+            else if(parameter is DataManipulationOptions)
+            {
+                DataManipulationOptions option = (DataManipulationOptions)parameter;
+                _userNavigatorViewModel.ViewModel = _usersADMVFactory.CreateViewModel(option);
             }
         }
     }

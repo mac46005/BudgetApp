@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +9,8 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.Core.Commands
 {
-    interface IAddEditCommand<T> : ICommand
+    interface IGenerateDataManipulationViewCommand<T, U> : ICommand where T : BaseModel<U>
     {
-
+        
     }
 }

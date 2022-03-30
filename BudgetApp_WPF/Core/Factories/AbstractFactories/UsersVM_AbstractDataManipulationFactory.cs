@@ -9,31 +9,40 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.AbstractFactories
 {
-    internal class UsersVM_AbstractFactory : IAbstractViewModelFactory<UserDataViewOptions>
+    internal class UsersVM_AbstractDataManipulationFactory : IAbstractDataManipulationViewFactory<User,int>
     {
+        private readonly User _user;
+        
         IDataViewModelFactory<User> _usersDVMFactory;
-        public UsersVM_AbstractFactory(IDataViewModelFactory<User> usersDVMFactory)
+        public UsersVM_AbstractDataManipulationFactory(IDataViewModelFactory<User> usersDVMFactory)
         {
             _usersDVMFactory = usersDVMFactory;
         }
 
-        public object CreateViewModel(UserDataViewOptions viewType)
+        public object CreateViewModel(DataManipulationOptions option)
         {
-            switch (viewType)
+            switch (option)
             {
-                case UserDataViewOptions.ViewUsers:
+                case DataManipulationOptions.View:
                     return _usersDVMFactory.CreateViewModel();
-                case UserDataViewOptions.AddUser:
+                case DataManipulationOptions.Insert:
                     return _usersDVMFactory.CreateViewModel();
-                case UserDataViewOptions.EditUser:
+                case DataManipulationOptions.Add:
                     return _usersDVMFactory.CreateViewModel();
-                case UserDataViewOptions.UpdateUser:
+                case DataManipulationOptions.Edit:
                     return _usersDVMFactory.CreateViewModel();
-                case UserDataViewOptions.DeleteUser:
+                case DataManipulationOptions.Delete:
+                    return _usersDVMFactory.CreateViewModel();
+                case DataManipulationOptions.Update:
                     return _usersDVMFactory.CreateViewModel();
                 default:
                     return _usersDVMFactory.CreateViewModel();
             }
+        }
+
+        public void SetModel(User model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

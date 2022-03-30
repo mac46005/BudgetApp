@@ -14,15 +14,8 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0"
                Content="Delete"/>
-        <StackPanel Grid.Row="1">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Name"/>
-                <Label Content="{Binding Name}"/>
-            </StackPanel>
-            
-        </StackPanel>
-        
-        
+        <TextBlock Grid.Row="1"
+                   Text="{Binding Model}"/>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

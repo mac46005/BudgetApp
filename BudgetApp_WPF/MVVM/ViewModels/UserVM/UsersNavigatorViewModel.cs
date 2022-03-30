@@ -12,10 +12,9 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
     internal class UsersNavigatorViewModel : BaseNavigatorViewModel<User>
     {
-        public UsersNavigatorViewModel(IAbstractViewModelFactory<UserDataViewOptions> UsersVM_AbtractFactory)
+        public UsersNavigatorViewModel(IAbstractDataManipulationViewFactory<User> usersADMVFactory)
         {
-            UpdateCurrentViewModelICommand = new UsersCreateVM_Command(this, UsersVM_AbtractFactory);
-            
+            UpdateCurrentViewModelICommand = new UsersCreateVM_Command(this, usersADMVFactory);
         }
     }
 }
