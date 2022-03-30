@@ -1,23 +1,22 @@
-﻿using BudgetApp_WPF.Core;
-using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
+﻿using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    internal abstract class BaseViewModel<T> : IViewModel<T>
+    internal abstract class BaseDeleteViewModel<T> : IDeleteViewModel<T>
     {
+        public ICommand DeleteViewCommand { get; }
+
         private T _model;
         public T Model 
         {
-            get 
+            get
             {
                 return _model;
             }
@@ -25,7 +24,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
             {
                 _model = value;
                 OnPropertyChanged("Model");
-            } 
+            }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
