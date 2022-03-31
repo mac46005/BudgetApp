@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.UserViewsFactory
 {
-    internal class UserDataViewFactory : IDataViewModelFactory<User>
+    internal class UserDataViewFactory : IAbstractDataViewModelFactory<User>
     {
         IAPIEndpoint<User, int> _usersDataEndPoint;
         public UserDataViewFactory(IAPIEndpoint<User,int> usersDataEndPoint)

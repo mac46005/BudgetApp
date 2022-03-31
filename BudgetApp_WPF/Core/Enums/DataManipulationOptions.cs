@@ -10,9 +10,8 @@ namespace BudgetApp_WPF.Core.Enums
     {
         View,
         Insert,
-        Add,
+        Update,
         Edit,
-        Delete,
-        Update
+        Delete
     }
 }

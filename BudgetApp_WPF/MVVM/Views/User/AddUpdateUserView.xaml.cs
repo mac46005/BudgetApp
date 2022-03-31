@@ -18,9 +18,9 @@ namespace BudgetApp_WPF.MVVM.Views.User
     /// <summary>
     /// Interaction logic for AddEditUserView.xaml
     /// </summary>
-    public partial class AddEditUserView : UserControl
+    public partial class AddUpdateUserView : UserControl
     {
-        public AddEditUserView()
+        public AddUpdateUserView()
         {
             InitializeComponent();
         }

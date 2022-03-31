@@ -10,7 +10,7 @@ namespace BudgetApp_WPF.MVVM.Models
 {
     public class DataManipulationItem<T,U> : where T : BaseModel<U>
     {
-        T Model { get; set; }
-        DataManipulationOptions Option { get; set; }
+        public T Model { get; set; }
+        public DataManipulationOptions Option { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Budget_ClassLib.Models;
 using BudgetApp_WPF.Core.Enums;
+using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 using BudgetApp_WPF.MVVM.Models;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
@@ -12,11 +13,11 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.Core.Commands
 {
-    internal class UsersCreateVM_Command : ICommand
+    internal class UsersADMVMF_Command : ICommand
     {
-        private readonly IAbstractDataManipulationViewFactory<User> _usersADMVFactory;
+        private readonly IAbstractDataManipulationViewModelFactory<User,int> _usersADMVFactory;
         private readonly INavigator<User> _userNavigatorViewModel;
-        public UsersCreateVM_Command(INavigator<User> userNavigatorViewModel, IAbstractDataManipulationViewFactory<User> usersADMVFactoy)
+        public UsersADMVMF_Command(INavigator<User> userNavigatorViewModel, IAbstractDataManipulationViewModelFactory<User,int> usersADMVFactoy)
         {
             _userNavigatorViewModel = userNavigatorViewModel;
             _usersADMVFactory = usersADMVFactoy;
@@ -31,9 +32,11 @@ namespace BudgetApp_WPF.Core.Commands
 
         public void Execute(object? parameter)
         {
-            if(parameter is DataManipulationItem)
+            if(parameter is DataManipulationItem<User,int>)
             {
-                // Do something
+                DataManipulationItem<User,int> parameter = (DataManipulationItem<User, int>)parameter;
+                _usersADMVFactory.SetModel(parameter.Model);
+                _usersADMVFactory.CreateViewModel(parameter.Option);
             }
             else if(parameter is DataManipulationOptions)
             {

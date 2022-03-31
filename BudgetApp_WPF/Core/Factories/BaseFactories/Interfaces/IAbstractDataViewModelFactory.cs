@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces
 {
-    interface IDataViewModelFactory<T> : IViewModelFactory<T>
+    interface IAbstractDataViewModelFactory<T> : IViewModelFactory<T>
     {
     }
 }

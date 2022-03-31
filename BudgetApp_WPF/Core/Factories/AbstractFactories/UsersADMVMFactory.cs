@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.AbstractFactories
 {
-    internal class UsersVM_AbstractDataManipulationFactory : IAbstractDataManipulationViewFactory<User,int>
+    internal class UsersADMVMFactory : IAbstractDataManipulationViewModelFactory<User,int>
     {
-        private readonly User _user;
+        private readonly User _model;
         
-        IDataViewModelFactory<User> _usersDVMFactory;
-        public UsersVM_AbstractDataManipulationFactory(IDataViewModelFactory<User> usersDVMFactory)
+        IAbstractDataViewModelFactory<User> _usersDVMFactory;
+        IAbstractAddUpdateViewModelFactory<User, int, DataManipulationOptions> _AU_UserVMFactory;
+        public UsersADMVMFactory(IAbstractDataViewModelFactory<User> usersDVMFactory, IAbstractAddUpdateViewModelFactory<User,int, DataManipulationOptions> AU_UserVMFactory)
         {
             _usersDVMFactory = usersDVMFactory;
+            _AU_UserVMFactory = AU_UserVMFactory;
         }
 
         public object CreateViewModel(DataManipulationOptions option)
@@ -26,14 +28,11 @@ namespace BudgetApp_WPF.Core.Factories.AbstractFactories
                 case DataManipulationOptions.View:
                     return _usersDVMFactory.CreateViewModel();
                 case DataManipulationOptions.Insert:
-                    return _usersDVMFactory.CreateViewModel();
-                case DataManipulationOptions.Add:
-                    return _usersDVMFactory.CreateViewModel();
-                case DataManipulationOptions.Edit:
-                    return _usersDVMFactory.CreateViewModel();
-                case DataManipulationOptions.Delete:
-                    return _usersDVMFactory.CreateViewModel();
+                    return _AU_UserVMFactory.CreateViewModel(option);
                 case DataManipulationOptions.Update:
+                    _AU_UserVMFactory.SetModel(_model);
+                    return _AU_UserVMFactory.CreateViewModel(option);
+                case DataManipulationOptions.Delete:
                     return _usersDVMFactory.CreateViewModel();
                 default:
                     return _usersDVMFactory.CreateViewModel();
@@ -42,7 +41,7 @@ namespace BudgetApp_WPF.Core.Factories.AbstractFactories
 
         public void SetModel(User model)
         {
-            throw new NotImplementedException();
+            _model = model;
         }
     }
 }

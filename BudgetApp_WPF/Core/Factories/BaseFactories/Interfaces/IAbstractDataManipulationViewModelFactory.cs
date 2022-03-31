@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces
 {
-    public interface IAbstractDataManipulationViewFactory<T, U> where T : BaseModel<U>
+    public interface IAbstractDataManipulationViewModelFactory<T, U> where T : BaseModel<U>
     {
         object CreateViewModel(DataManipulationOptions option);
-        void SetModel(T model)
+        void SetModel(T model);
     }
 }

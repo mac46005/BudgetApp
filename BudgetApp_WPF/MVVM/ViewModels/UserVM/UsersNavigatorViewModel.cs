@@ -6,14 +6,15 @@ using System.Windows.Input;
 using System.ComponentModel;
 using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Enums;
+using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
     internal class UsersNavigatorViewModel : BaseNavigatorViewModel<User>
     {
-        public UsersNavigatorViewModel(IAbstractDataManipulationViewFactory<User> usersADMVFactory)
+        public UsersNavigatorViewModel(IAbstractDataManipulationViewModelFactory<User,int> usersADMVFactory)
         {
-            UpdateCurrentViewModelICommand = new UsersCreateVM_Command(this, usersADMVFactory);
+            UpdateCurrentViewModelICommand = new UsersADMVMF_Command(this, usersADMVFactory);
         }
     }
 }

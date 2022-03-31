@@ -18,17 +18,17 @@ namespace BudgetApp_WPF.Core.Factories.UserViewsFactory
 
     internal class UsersNavigatorVMFactory : INavigatorViewModelFactory<User>
     {
-        IAbstractDataManipulationViewFactory<User> _usersADMVFactory;
-        public UsersNavigatorVMFactory(IAbstractDataManipulationViewFactory<User> usersADMVFactory)
+        IAbstractDataManipulationViewModelFactory<User,int> _usersADMVMFactory;
+        public UsersNavigatorVMFactory(IAbstractDataManipulationViewModelFactory<User,int> usersADMVMFactory)
         {
-            _usersADMVFactory = usersADMVFactory;
+            _usersADMVMFactory = usersADMVMFactory;
         }
 
 
 
         public object CreateViewModel()
         {
-            return new UsersNavigatorViewModel(_usersADMVFactory);
+            return new UsersNavigatorViewModel(_usersADMVMFactory);
         }
     }
 }
