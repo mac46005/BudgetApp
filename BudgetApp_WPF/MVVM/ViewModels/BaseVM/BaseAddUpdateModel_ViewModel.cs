@@ -14,6 +14,8 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
     internal abstract class BaseAddUpdateModel_ViewModel<T, U> : BaseViewModel<T>, IAddUpdateModel_ViewModel<T, U> where T : BaseModel<U>
     {
+
+        public string Status { get; }
         public IAPIEndpoint<T, U> APIEndPoint { get; }
 
         public ICommand ManipulateDataCommand { get; }
@@ -21,11 +23,13 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         public DataManipulationOptions Option { get; set; }
         public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint,T model)
         {
+            Status = "Update User";
             APIEndPoint = apiEndPoint;
             Model = model;
         }
         public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint)
         {
+            Status = "Insert New User";
             APIEndPoint = apiEndPoint;
         }
     }

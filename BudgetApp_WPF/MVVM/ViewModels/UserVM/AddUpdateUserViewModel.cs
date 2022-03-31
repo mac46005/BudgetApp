@@ -13,10 +13,21 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
     internal class AddUpdateUserViewModel : BaseAddUpdateModel_ViewModel<User,int>
     {
+        /// <summary>
+        /// Used for updating user information
+        /// </summary>
+        /// <param name="usersDataEndPoint"></param>
+        /// <param name="model"></param>
         public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint,User model) : base(usersDataEndPoint,model)
         {
             
         }
+        
+
+        /// <summary>
+        /// Used for creating a user
+        /// </summary>
+        /// <param name="usersDataEndPoint"></param>
         public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint) : base(usersDataEndPoint)
         {
 
