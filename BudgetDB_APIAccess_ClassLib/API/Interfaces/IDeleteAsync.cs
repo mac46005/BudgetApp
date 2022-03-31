@@ -19,6 +19,6 @@ namespace BudgetDB_APIAccess_ClassLib.API.Interfaces
         /// </summary>
         /// <param name="ID">Represents the data type of the ID property of the BaseModel</param>
         /// <returns></returns>
-        Task DeleteAsync(U ID);
+        Task DELETEAsync(U ID);
     }
 }

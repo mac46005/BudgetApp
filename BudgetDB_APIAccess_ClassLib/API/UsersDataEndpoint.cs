@@ -21,7 +21,7 @@ namespace BudgetDB_APIAccess_ClassLib.API
             _apiClient = apiClient;
         }
 
-        public async Task DeleteAsync(int ID)
+        public async Task DELETEAsync(int ID)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace BudgetDB_APIAccess_ClassLib.API
             }
         }
 
-        public async Task PostAsync(User obj)
+        public async Task POSTAsync(User obj)
         {
             try
             {

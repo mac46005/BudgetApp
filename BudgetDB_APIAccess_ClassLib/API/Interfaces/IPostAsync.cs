@@ -18,6 +18,6 @@ namespace BudgetDB_APIAccess_ClassLib.API.Interfaces
         /// </summary>
         /// <param name="obj">A class that inherets the BaseModel</param>
         /// <returns></returns>
-        Task PostAsync(T obj);
+        Task POSTAsync(T obj);
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
-    internal class UserDeleteViewModel : BaseDeleteViewModel<User>
+    internal class UserDeleteViewModel : BaseDeleteViewModel<User, int>
     {
         public UserDeleteViewModel(User user) : base(user)
         {

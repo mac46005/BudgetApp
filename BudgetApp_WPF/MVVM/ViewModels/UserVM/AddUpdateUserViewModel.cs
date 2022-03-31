@@ -1,5 +1,6 @@
 ﻿using Budget_ClassLib.Models;
 using BudgetApp_API.DataAccess.Interfaces;
+using BudgetApp_WPF.Core.Commands.UserCommands;
 using BudgetApp_WPF.Core.Factories.BaseFactories;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using BudgetDB_APIAccess_ClassLib.API.Interfaces;
@@ -21,6 +22,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
         public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint,User model) : base(usersDataEndPoint,model)
         {
             Status += " User";
+            this.ManipulateDataCommand = new UserDataCommand(this.APIEndPoint,this.Option);
         }
         
 

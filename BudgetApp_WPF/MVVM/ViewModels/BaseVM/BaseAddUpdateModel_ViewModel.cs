@@ -1,4 +1,5 @@
 ﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.Core.Commands.Base.Interfaces;
 using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetDB_APIAccess_ClassLib.API.Interfaces;
@@ -18,9 +19,10 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         public string Status { get; set; }
         public IAPIEndpoint<T, U> APIEndPoint { get; }
 
-        public ICommand ManipulateDataCommand { get; }
-
         public DataManipulationOptions Option { get; set; }
+
+        public IManipulateDataCommand<T, U> ManipulateDataCommand { get; set; }
+
         public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint,T model)
         {
             Status = "Update";
