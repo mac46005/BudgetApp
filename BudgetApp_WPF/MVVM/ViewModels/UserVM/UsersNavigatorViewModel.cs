@@ -7,6 +7,7 @@ using System.ComponentModel;
 using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
+using BudgetApp_WPF.Core.Commands.UserCommands;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {

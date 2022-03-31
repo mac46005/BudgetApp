@@ -8,10 +8,9 @@ namespace BudgetApp_WPF.Core.Enums
 {
     public enum DataManipulationOptions
     {
-        View,
-        Insert,
+        Read,
+        Create,
         Update,
-        Edit,
         Delete
     }
 }

@@ -27,9 +27,9 @@ namespace BudgetApp_WPF.Core.Factories.AbstractFactories
         {
             switch (option)
             {
-                case DataManipulationOptions.View:
+                case DataManipulationOptions.Read:
                     return _usersDMVMFactory.CreateViewModel();
-                case DataManipulationOptions.Insert:
+                case DataManipulationOptions.Create:
                     return _AU_UserVMFactory.CreateViewModel(option);
                 case DataManipulationOptions.Update:
                     _AU_UserVMFactory.SetModel(_model);

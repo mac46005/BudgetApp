@@ -24,9 +24,9 @@ namespace BudgetApp_WPF.Core.Factories.UserViewsFactory
         {
             switch (option)
             {
-                case DataManipulationOptions.Insert:
+                case DataManipulationOptions.Create:
                     return new AddUpdateUserViewModel(_usersDataEndPoint);
-                case DataManipulationOptions.Edit:
+                case DataManipulationOptions.Update:
                     var vm = new AddUpdateUserViewModel(_usersDataEndPoint,_model);
                     return vm;
                 default:

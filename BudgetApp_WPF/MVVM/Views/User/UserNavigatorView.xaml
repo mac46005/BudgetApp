@@ -23,11 +23,11 @@
             <Button Grid.Column="1"
                     Content="View Data"
                     Command="{Binding UpdateCurrentViewModelICommand}"
-                    CommandParameter="{x:Static enums:DataManipulationOptions.View}"/>
+                    CommandParameter="{x:Static enums:DataManipulationOptions.Read}"/>
             <Button Grid.Column="2"
                     Content="Add User"
                     Command="{Binding UpdateCurrentViewModelICommand}"
-                    CommandParameter="{x:Static enums:DataManipulationOptions.Insert}"/>
+                    CommandParameter="{x:Static enums:DataManipulationOptions.Create}"/>
         </Grid>
         
         <ContentControl Grid.Row="1"
