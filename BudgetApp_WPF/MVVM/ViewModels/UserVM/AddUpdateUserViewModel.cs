@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
-    internal class AddUpdateUserViewModel : BaseViewModel<User>
+    internal class AddUpdateUserViewModel : BaseAddUpdateModel_ViewModel<User,int>
     {
-        public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint)
+        public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint,User model) : base(usersDataEndPoint,model)
         {
             
         }

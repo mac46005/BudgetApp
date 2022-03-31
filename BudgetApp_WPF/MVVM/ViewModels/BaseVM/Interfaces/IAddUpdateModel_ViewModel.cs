@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
 {
-    interface IAddEditModel_ViewModel<T, U> : IViewModel<T> where T : BaseModel<U>
+    interface IAddUpdateModel_ViewModel<T, U> : IViewModel<T> where T : BaseModel<U>
     {
         IAPIEndpoint<T, U> APIEndPoint { get; }
         ICommand ManipulateDataCommand { get; }
