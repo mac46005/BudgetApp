@@ -12,7 +12,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
 {
     interface IAddUpdateModel_ViewModel<T, U> : IViewModel<T> where T : BaseModel<U>
     {
-        string Status { get; }
+        string Status { get; set; }
         IAPIEndpoint<T, U> APIEndPoint { get; }
         ICommand ManipulateDataCommand { get; }
         DataManipulationOptions Option { get; set; }

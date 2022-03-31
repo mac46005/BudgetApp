@@ -20,7 +20,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
         /// <param name="model"></param>
         public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint,User model) : base(usersDataEndPoint,model)
         {
-            
+            Status += " User";
         }
         
 
@@ -30,7 +30,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
         /// <param name="usersDataEndPoint"></param>
         public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint) : base(usersDataEndPoint)
         {
-
+            Status += " User";
         }
     }
 }

@@ -11,13 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace BudgetApp_WPF.Core.Commands
+namespace BudgetApp_WPF.Core.Commands.UserCommands
 {
     internal class UsersADMVMF_Command : ICommand
     {
-        private readonly IAbstractDataManipulationViewModelFactory<User,int> _usersADMVFactory;
+        private readonly IAbstractDataManipulationViewModelFactory<User, int> _usersADMVFactory;
         private readonly INavigator<User> _userNavigatorViewModel;
-        public UsersADMVMF_Command(INavigator<User> userNavigatorViewModel, IAbstractDataManipulationViewModelFactory<User,int> usersADMVFactoy)
+        public UsersADMVMF_Command(INavigator<User> userNavigatorViewModel, IAbstractDataManipulationViewModelFactory<User, int> usersADMVFactoy)
         {
             _userNavigatorViewModel = userNavigatorViewModel;
             _usersADMVFactory = usersADMVFactoy;
@@ -32,13 +32,13 @@ namespace BudgetApp_WPF.Core.Commands
 
         public void Execute(object? parameter)
         {
-            if(parameter is DataManipulationItem<User,int>)
+            if (parameter is DataManipulationItem<User, int>)
             {
-                DataManipulationItem<User,int> dataManipulationItem = (DataManipulationItem<User, int>)parameter;
+                DataManipulationItem<User, int> dataManipulationItem = (DataManipulationItem<User, int>)parameter;
                 _usersADMVFactory.SetModel(dataManipulationItem.Model);
                 _usersADMVFactory.CreateViewModel(dataManipulationItem.Option);
             }
-            else if(parameter is DataManipulationOptions)
+            else if (parameter is DataManipulationOptions)
             {
                 DataManipulationOptions option = (DataManipulationOptions)parameter;
                 _userNavigatorViewModel.ViewModel = _usersADMVFactory.CreateViewModel(option);

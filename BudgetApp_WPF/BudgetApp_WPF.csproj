@@ -26,6 +26,10 @@
 
   <ItemGroup>
     <Folder Include="Core\Assets\" />
+    <Folder Include="Core\Commands\IncomeCommands\" />
+    <Folder Include="Core\Commands\ExpenseCommands\" />
+    <Folder Include="Core\Commands\ExpenseCategoryCommands\" />
+    <Folder Include="Core\Commands\ExpenseSubCategoryCommands\" />
     <Folder Include="Core\Factories\HistoryViewsFactory\" />
   </ItemGroup>
 
