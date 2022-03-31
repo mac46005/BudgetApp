@@ -17,5 +17,9 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
         {
             
         }
+        public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint) : base(usersDataEndPoint)
+        {
+
+        }
     }
 }

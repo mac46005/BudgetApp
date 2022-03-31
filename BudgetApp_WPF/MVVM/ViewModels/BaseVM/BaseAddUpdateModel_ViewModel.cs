@@ -18,7 +18,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 
         public ICommand ManipulateDataCommand { get; }
 
-        public DataManipulationOptions Option { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DataManipulationOptions Option { get; set; }
         public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint,T model)
         {
             APIEndPoint = apiEndPoint;
@@ -26,7 +26,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         }
         public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint)
         {
-            APIEndPoint - apiEndPoint;
+            APIEndPoint = apiEndPoint;
         }
     }
 }

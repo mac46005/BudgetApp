@@ -61,4 +61,7 @@
     <DataTemplate DataType="{x:Type userVM:UserDataViewModel}">
         <userV:UserDataView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type userVM:AddUpdateUserViewModel}">
+        <userV:AddUpdateUserView/>
+    </DataTemplate>
 </ResourceDictionary>
