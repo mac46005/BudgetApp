@@ -34,9 +34,9 @@ namespace BudgetApp_WPF.Core.Commands
         {
             if(parameter is DataManipulationItem<User,int>)
             {
-                DataManipulationItem<User,int> parameter = (DataManipulationItem<User, int>)parameter;
-                _usersADMVFactory.SetModel(parameter.Model);
-                _usersADMVFactory.CreateViewModel(parameter.Option);
+                DataManipulationItem<User,int> dataManipulationItem = (DataManipulationItem<User, int>)parameter;
+                _usersADMVFactory.SetModel(dataManipulationItem.Model);
+                _usersADMVFactory.CreateViewModel(dataManipulationItem.Option);
             }
             else if(parameter is DataManipulationOptions)
             {

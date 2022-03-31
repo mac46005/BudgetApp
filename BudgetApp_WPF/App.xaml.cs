@@ -62,8 +62,10 @@ namespace BudgetApp_WPF
 
 
             // View Factories
-            services.AddTransient<IAbstractViewModelFactory<UserDataViewOptions>, UsersADMVMFactory>();
-            services.AddTransient<IAbstractDataViewModelFactory<User>, UserDataViewFactory>();
+            services.AddTransient<IAbstractAddUpdateViewModelFactory<User, int, DataManipulationOptions>, AddUpdateUserVMFactory>();
+            services.AddTransient<IAbstractDeleteViewModelFactory<User, int>, UsersDeleteViewModelFactory>();
+            services.AddTransient<IAbstractDataViewModelFactory<User>, UserDataViewModelFactory>();
+            services.AddTransient<IAbstractDataManipulationViewModelFactory<User, int>, UsersADMVMFactory>();
             services.AddTransient<INavigatorViewModelFactory<User>, UsersNavigatorVMFactory>();
 
 

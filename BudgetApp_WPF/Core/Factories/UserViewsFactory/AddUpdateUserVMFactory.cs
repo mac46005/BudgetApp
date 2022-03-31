@@ -13,7 +13,7 @@ namespace BudgetApp_WPF.Core.Factories.UserViewsFactory
 {
     internal class AddUpdateUserVMFactory : IAbstractAddUpdateViewModelFactory<User,int,DataManipulationOptions>
     {
-        private readonly T _model;
+        private User _model;
 
         IAPIEndpoint<User, int> _usersDataEndPoint;
         public AddUpdateUserVMFactory(IAPIEndpoint<User,int> usersDataEndPoint)

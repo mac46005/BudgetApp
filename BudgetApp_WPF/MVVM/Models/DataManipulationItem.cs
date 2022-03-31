@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BudgetApp_WPF.MVVM.Models
 {
-    public class DataManipulationItem<T,U> : where T : BaseModel<U>
+    public class DataManipulationItem<T,U> where T : BaseModel<U>
     {
         public T Model { get; set; }
         public DataManipulationOptions Option { get; set; }

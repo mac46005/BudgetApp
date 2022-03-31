@@ -11,6 +11,10 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 {
     internal abstract class BaseDeleteViewModel<T> : BaseViewModel<T>, IDeleteViewModel<T>
     {
+        public BaseDeleteViewModel(T model)
+        {
+            Model = model;
+        }
         public ICommand DeleteViewCommand { get; }
     }
 }
