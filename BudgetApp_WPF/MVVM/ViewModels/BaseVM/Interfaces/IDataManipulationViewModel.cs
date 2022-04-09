@@ -11,7 +11,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
     internal interface IDataManipulationViewModel<T,U> : IViewModel<T> where T : BaseModel<U>
     {
         //Maybe use an event?
-        event EventHandler<T> MyEvent;
-        IManipulateDataCommand<T,U> ManipulateDataCommand { get; }
+        event EventHandler<T> DoneWithViewEvent;
+        IManipulateDataCommand<T,U> ManipulateWindowCommand { get; }
     }
 }

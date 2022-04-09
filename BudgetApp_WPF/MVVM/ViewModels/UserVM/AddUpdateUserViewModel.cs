@@ -22,7 +22,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
         public AddUpdateUserViewModel(IAPIEndpoint<User,int> usersDataEndPoint,User model) : base(usersDataEndPoint,model)
         {
             Status += " User";
-            this.ManipulateDataCommand = new UserDataCommand(this.APIEndPoint,this.Option,Model);
+            this.ManipulateWindowCommand = new UserDataCommand(this.APIEndPoint,this.Option,Model);
         }
         
 

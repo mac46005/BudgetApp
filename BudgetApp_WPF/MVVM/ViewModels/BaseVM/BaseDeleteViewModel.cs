@@ -18,6 +18,6 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
             Model = model;
         }
 
-        public IManipulateDataCommand<T, U> ManipulateDataCommand { get; }
+        public IManipulateDataCommand<T, U> ManipulateWindowCommand { get; }
     }
 }

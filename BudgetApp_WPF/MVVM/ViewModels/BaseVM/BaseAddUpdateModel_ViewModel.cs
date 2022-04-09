@@ -21,7 +21,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 
         public DataManipulationOptions Option { get; set; }
 
-        public IManipulateDataCommand<T, U> ManipulateDataCommand { get; set; }
+        public IManipulateDataCommand<T, U> ManipulateWindowCommand { get; set; }
 
         public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint,T model)
         {
@@ -33,6 +33,9 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         {
             Status = "Add New";
             APIEndPoint = apiEndPoint;
+            DoneWithViewEvent.
         }
+
+        public event EventHandler<T> DoneWithViewEvent;
     }
 }

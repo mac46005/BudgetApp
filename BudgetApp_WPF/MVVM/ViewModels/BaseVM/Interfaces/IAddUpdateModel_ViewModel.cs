@@ -15,7 +15,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
     {
         string Status { get; set; }
         IAPIEndpoint<T, U> APIEndPoint { get; }
-        IManipulateDataCommand<T, U> ManipulateDataCommand { get; set; }
+        IManipulateDataCommand<T, U> ManipulateWindowCommand { get; set; }
         DataManipulationOptions Option { get; set; }
     }
 }
