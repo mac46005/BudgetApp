@@ -59,7 +59,7 @@
                     Orientation="Horizontal">
             <Button Content="OK"
                     Width="200"
-                    CommandParameter="{x:Static enums:BasicOptions.Ok}"/>
+                    Command="{Binding ManipulateDataCommand}"/>
             <Button Content="Cancel"
                     Width="200"
                     CommandParameter="{x:Static enums:BasicOptions.Cancel}"/>
