@@ -41,7 +41,10 @@ namespace BudgetApp_WPF.Core.Commands.UserCommands
             else if (parameter is DataManipulationOptions)
             {
                 DataManipulationOptions option = (DataManipulationOptions)parameter;
+                IDataManipulationViewModel<User,int> vm = (IDataManipulationViewModel<User,int>)_usersADMVFactory.CreateViewModel(option);
+                vm.ViewResolvedEvent += _userNavigatorViewModel.OnCurrentViewModelResolved;
                 _userNavigatorViewModel.ViewModel = _usersADMVFactory.CreateViewModel(option);
+                
             }
         }
     }
