@@ -25,7 +25,7 @@ namespace BudgetDB_APIAccess_ClassLib.API
         {
             try
             {
-                
+
                 using (HttpResponseMessage response = await _apiClient.APIClientObject.PostAsJsonAsync("api/UsersEndpoint", ID))
                 {
                     if (response.IsSuccessStatusCode)
@@ -97,9 +97,17 @@ namespace BudgetDB_APIAccess_ClassLib.API
         {
             try
             {
-                using (HttpResponseMessage respone = await _apiClient.APIClientObject.PostAsJsonAsync("api/UsersEndPoint", obj))
+                using (HttpResponseMessage respone = await _apiClient.APIClientObject.PostAsJsonAsync("/api/UsersEndPoint/", obj))
                 {
                     // TODO: log success?
+                    if (respone.IsSuccessStatusCode)
+                    {
+
+                    }
+                    else
+                    {
+                        throw new Exception(respone.ReasonPhrase);
+                    }
                 }
             }
             catch (HttpRequestException ex)

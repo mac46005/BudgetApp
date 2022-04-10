@@ -19,5 +19,22 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         }
 
         public IManipulateDataCommand<T, U> ManipulateWindowCommand { get; }
+
+        public ICommand RelayCommand => throw new NotImplementedException();
+
+        public event EventHandler<T> ViewResolvedEvent;
+
+        event EventHandler IDataManipulationViewModel<T, U>.ViewResolvedEvent
+        {
+            add
+            {
+                throw new NotImplementedException();
+            }
+
+            remove
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

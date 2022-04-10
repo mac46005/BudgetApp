@@ -13,7 +13,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
     {
 
 
-        private T _model;
+        private T _model = default;
         public T Model 
         {
             get 

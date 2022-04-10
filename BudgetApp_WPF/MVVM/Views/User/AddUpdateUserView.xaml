@@ -59,9 +59,11 @@
                     Orientation="Horizontal">
             <Button Content="OK"
                     Width="200"
-                    Command="{Binding ManipulateDataCommand}"/>
+                    Command="{Binding RelayCommand}"
+                    CommandParameter="{x:Static enums:BasicOptions.Ok}"/>
             <Button Content="Cancel"
                     Width="200"
+                    Command="{Binding RelayCommand}"
                     CommandParameter="{x:Static enums:BasicOptions.Cancel}"/>
         </StackPanel>
 

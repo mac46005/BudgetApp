@@ -8,6 +8,7 @@ using BudgetApp_WPF.Core.Commands;
 using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 using BudgetApp_WPF.Core.Commands.UserCommands;
+using System;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
 {
@@ -16,6 +17,10 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
         public UsersNavigatorViewModel(IAbstractDataManipulationViewModelFactory<User,int> usersADMVFactory)
         {
             UpdateCurrentViewModelICommand = new UsersADMVMF_Command(this, usersADMVFactory);
+        }
+        public override void OnCurrentViewModelResolved(object? sender, EventArgs? eventArgs)
+        {
+            UpdateCurrentViewModelICommand.Execute(DataManipulationOptions.Read);
         }
     }
 }

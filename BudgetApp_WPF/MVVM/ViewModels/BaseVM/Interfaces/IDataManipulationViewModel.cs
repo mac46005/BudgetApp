@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
 {
     internal interface IDataManipulationViewModel<T,U> : IViewModel<T> where T : BaseModel<U>
     {
         //Maybe use an event?
-        event EventHandler<T> DoneWithViewEvent;
-        IManipulateDataCommand<T,U> ManipulateWindowCommand { get; }
+        event EventHandler ViewResolvedEvent;
+        ICommand RelayCommand { get; }
     }
 }

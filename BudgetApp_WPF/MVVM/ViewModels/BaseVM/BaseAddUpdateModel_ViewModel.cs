@@ -1,4 +1,5 @@
 ﻿using Budget_ClassLib.Models;
+using BudgetApp_WPF.Core;
 using BudgetApp_WPF.Core.Commands.Base.Interfaces;
 using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
@@ -9,6 +10,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
@@ -21,21 +23,67 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 
         public DataManipulationOptions Option { get; set; }
 
-        public IManipulateDataCommand<T, U> ManipulateWindowCommand { get; set; }
+        public ICommand RelayCommand { get; set; }
 
-        public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint,T model)
+        public event EventHandler ViewResolvedEvent;
+
+
+
+        public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T, U> apiEndPoint, T model)
         {
             Status = "Update";
             APIEndPoint = apiEndPoint;
             Model = model;
+            RelayCommand = new RelayCommand(o =>
+            {
+                BasicOptions basicOptions = (BasicOptions)o;
+                MessageBoxResult result;
+                switch (o)
+                {
+                    case BasicOptions.Ok:
+                        APIEndPoint.PUTAsync(Model, Model.ID);
+                        ViewResolvedEvent?.Invoke(this,new EventArgs());
+                        break;
+                    case BasicOptions.Cancel:
+                        result = MessageBox.Show("Are you sure you want to cancel?", "Cancel", MessageBoxButton.YesNo);
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            ViewResolvedEvent?.Invoke(this, new EventArgs());
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                ViewResolvedEvent?.Invoke(this, new EventArgs());
+            });
         }
-        public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T,U> apiEndPoint)
+        public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T, U> apiEndPoint)
         {
             Status = "Add New";
             APIEndPoint = apiEndPoint;
-            DoneWithViewEvent.
+            RelayCommand = new RelayCommand(o =>
+            {
+                BasicOptions basicOptions = (BasicOptions)o;
+                MessageBoxResult result;
+                switch (o)
+                {
+                    case BasicOptions.Ok:
+                        APIEndPoint.POSTAsync(Model);
+                        ViewResolvedEvent?.Invoke(this, new EventArgs());
+                        break;
+                    case BasicOptions.Cancel:
+                        result = MessageBox.Show("Are you sure you want to cancel?", "Cancel", MessageBoxButton.YesNo);
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            ViewResolvedEvent?.Invoke(this,new EventArgs());
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            });
         }
 
-        public event EventHandler<T> DoneWithViewEvent;
+
     }
 }
