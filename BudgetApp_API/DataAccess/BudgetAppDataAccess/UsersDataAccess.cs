@@ -7,7 +7,7 @@ namespace BudgetApp_API.DataAccess.BudgetAppDataAccess
 {
     internal class UsersDataAccess : BaseSqlDataAccess,ICRUDDataAccessAsync<User, int>
     {
-        SqlStringHelper _sqlStringHelper = new SqlStringHelper("Users", "BudgetDB");
+        SqlStringHelper _sqlStringHelper = new SqlStringHelper("Users", "BudgetDB_MacPC");
 
 
         public UsersDataAccess(
