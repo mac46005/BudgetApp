@@ -50,7 +50,7 @@ namespace BudgetApp_WPF.Core.Commands.UserCommands
                     case DataManipulationOptions.Create:
                         BaseAddUpdateModel_ViewModel<User,int> vm = (BaseAddUpdateModel_ViewModel<User,int>)_usersADMVFactory.CreateViewModel(option);
                         vm.ViewModelResolvedEvent += _userNavigatorViewModel.OnViewModelResolved;
-                        _userNavigatorViewModel.ViewModel = _usersADMVFactory.CreateViewModel(option);
+                        _userNavigatorViewModel.ViewModel = vm;
                         break;
                     case DataManipulationOptions.Update:
                         break;
