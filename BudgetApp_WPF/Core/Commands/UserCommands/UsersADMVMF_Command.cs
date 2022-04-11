@@ -2,6 +2,7 @@
 using BudgetApp_WPF.Core.Enums;
 using BudgetApp_WPF.Core.Factories.BaseFactories.Interfaces;
 using BudgetApp_WPF.MVVM.Models;
+using BudgetApp_WPF.MVVM.ViewModels.BaseVM;
 using BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces;
 using BudgetApp_WPF.MVVM.ViewModels.UserVM;
 using System;
@@ -47,8 +48,8 @@ namespace BudgetApp_WPF.Core.Commands.UserCommands
                         _userNavigatorViewModel.ViewModel = _usersADMVFactory.CreateViewModel(option);
                         break;
                     case DataManipulationOptions.Create:
-                        IDataManipulationViewModel<User, int> vm = (IDataManipulationViewModel<User, int>)_usersADMVFactory.CreateViewModel(option);
-                        vm.ViewResolvedEvent += _userNavigatorViewModel.OnCurrentViewModelResolved;
+                        BaseAddUpdateModel_ViewModel<User,int> vm = (BaseAddUpdateModel_ViewModel<User,int>)_usersADMVFactory.CreateViewModel(option);
+                        vm.ViewModelResolvedEvent += _userNavigatorViewModel.OnViewModelResolved;
                         _userNavigatorViewModel.ViewModel = _usersADMVFactory.CreateViewModel(option);
                         break;
                     case DataManipulationOptions.Update:

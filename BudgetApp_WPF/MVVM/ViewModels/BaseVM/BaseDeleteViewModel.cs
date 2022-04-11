@@ -24,7 +24,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 
         public event EventHandler<T> ViewResolvedEvent;
 
-        event EventHandler IDataManipulationViewModel<T, U>.ViewResolvedEvent
+        event EventHandler IDataManipulationViewModel<T, U>.ViewModelResolvedEvent
         {
             add
             {

@@ -25,7 +25,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
 
         public ICommand RelayCommand { get; set; }
 
-        public event EventHandler ViewResolvedEvent;
+        public event EventHandler ViewModelResolvedEvent;
 
 
 
@@ -42,19 +42,19 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
                 {
                     case BasicOptions.Ok:
                         APIEndPoint.PUTAsync(Model, Model.ID);
-                        ViewResolvedEvent?.Invoke(this,new EventArgs());
+                        ViewModelResolvedEvent?.Invoke(this,new EventArgs());
                         break;
                     case BasicOptions.Cancel:
                         result = MessageBox.Show("Are you sure you want to cancel?", "Cancel", MessageBoxButton.YesNo);
                         if (result == MessageBoxResult.Yes)
                         {
-                            ViewResolvedEvent?.Invoke(this, new EventArgs());
+                            ViewModelResolvedEvent?.Invoke(this, new EventArgs());
                         }
                         break;
                     default:
                         break;
                 }
-                ViewResolvedEvent?.Invoke(this, new EventArgs());
+                ViewModelResolvedEvent?.Invoke(this, new EventArgs());
             });
         }
         public BaseAddUpdateModel_ViewModel(IAPIEndpoint<T, U> apiEndPoint)
@@ -69,13 +69,13 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
                 {
                     case BasicOptions.Ok:
                         APIEndPoint.POSTAsync(Model);
-                        ViewResolvedEvent?.Invoke(this, new EventArgs());
+                        OnViewModelResolved();
                         break;
                     case BasicOptions.Cancel:
                         result = MessageBox.Show("Are you sure you want to cancel?", "Cancel", MessageBoxButton.YesNo);
                         if (result == MessageBoxResult.Yes)
                         {
-                            ViewResolvedEvent?.Invoke(this,new EventArgs());
+                            OnViewModelResolved();
                         }
                         break;
                     default:
@@ -84,6 +84,12 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
             });
         }
 
-
+        protected virtual void OnViewModelResolved()
+        {
+            if(ViewModelResolvedEvent != null)
+            {
+                ViewModelResolvedEvent.Invoke(this, EventArgs.Empty);
+            }
+        }
     }
 }

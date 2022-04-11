@@ -56,7 +56,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
 
-        public void OnCurrentViewModelResolved(object? sender, EventArgs? eventArgs)
+        public void OnViewModelResolved(object? sender, EventArgs? eventArgs)
         {
             throw new NotImplementedException();
         }

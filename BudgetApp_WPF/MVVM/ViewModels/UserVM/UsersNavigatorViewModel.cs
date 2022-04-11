@@ -18,7 +18,14 @@ namespace BudgetApp_WPF.MVVM.ViewModels.UserVM
         {
             UpdateCurrentViewModelICommand = new UsersADMVMF_Command(this, usersADMVFactory);
         }
-        public override void OnCurrentViewModelResolved(object? sender, EventArgs? eventArgs)
+
+
+        /// <summary>
+        /// This should fire when Current View Model is finished...
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArgs"></param>
+        public override void OnViewModelResolved(object? sender, EventArgs? eventArgs)
         {
             UpdateCurrentViewModelICommand.Execute(DataManipulationOptions.Read);
         }

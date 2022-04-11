@@ -27,7 +27,7 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM
         }
         public ICommand UpdateCurrentViewModelICommand { get; set; }
 
-        public virtual void OnCurrentViewModelResolved(object? sender, EventArgs? eventArgs)
+        public virtual void OnViewModelResolved(object? sender, EventArgs? eventArgs)
         {
             
         }

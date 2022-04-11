@@ -12,7 +12,8 @@ namespace BudgetApp_WPF.MVVM.ViewModels.BaseVM.Interfaces
     internal interface IDataManipulationViewModel<T,U> : IViewModel<T> where T : BaseModel<U>
     {
         //Maybe use an event?
-        event EventHandler ViewResolvedEvent;
+        // TODO create a Custom even arg to take generic item
+        event EventHandler ViewModelResolvedEvent;
         ICommand RelayCommand { get; }
     }
 }
